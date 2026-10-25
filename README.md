@@ -29,7 +29,7 @@ lake env lean AxiomAudit.lean
 
 The project pins **Lean 4.35.0** and **Mathlib 4.35.0**. The build covers the local
 proof library with warnings treated as failures. The separate command freshly runs
-the **277-checkpoint** axiom audit, permitting only `propext`, `Classical.choice`,
+the 277-checkpoint axiom audit, permitting only `propext`, `Classical.choice`,
 and `Quot.sound`. GitHub Actions is configured to run these checks and separately elaborate the
 independent statement challenge.
 
