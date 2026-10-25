@@ -1,0 +1,55 @@
+{
+  "repository": "https://github.com/32805433/Universal-Group.git",
+  "revision": "6416dd36ad22f3684583457f234519bafc851396",
+  "source_directory": "SmallPresentation",
+  "upstream_toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "integration_toolchain": "leanprover/lean4:v4.35.0",
+  "license": "LICENSES/UniversalGroup-MIT.txt",
+  "port_patch": "provenance/UniversalGroup.patch",
+  "upstream_theorem": "UniversalGroup.exists_two_generator_thirteen_relator_universal_group",
+  "adapter": "SmallPresentationStatements.Seed.exists_two_thirteen_universal",
+  "note": "The source is pinned. Compilation and axiom verification must be checked separately; the manifest is not a proof certificate.",
+  "shared_api_extension": {
+    "file": "SmallPresentation/UniversalGroup/Simulator/Recognition/Forward.lean",
+    "original_sha256": "3101971f68d827973fc7069bc3849ea5eb0e7cf54e55a9f4fb1863ab3cfaf8aa",
+    "local_sha256": "d6edeabc7c2a6de4754ac9aab68a264c74f653fe0c46d8a575112ffb79c8c895",
+    "reason": "Expose existing generic positive-word transport lemmas for use by the Adian\u2013Rabin extension; mathematical statements and proof bodies unchanged.",
+    "patch": "provenance/UniversalGroup.patch"
+  },
+  "maintenance_edits": [
+    {
+      "file": "SmallPresentation/UniversalGroup/Preparation/FreeProduct.lean",
+      "before_sha256": "f7649d695ec95bdf1b5f815e3878708ae17ad7bb50dfd7b0f3a9f7ca7f291fea",
+      "local_sha256": "90ce92c5fb86f3acb1da83cf7a498acbfa87fc7d88ddaa5614a7ce9c60624a8b",
+      "reason": "Replace deprecated Mathlib integer-order import with its canonical module."
+    },
+    {
+      "file": "SmallPresentation/UniversalGroup/Higman/EffectiveEmbedding/Free.lean",
+      "before_sha256": "06adaa2c3fcc52d8ec6b6ce7b8aa173e677bb03f5ecdec3b2c80298cdb27bddf",
+      "local_sha256": "98b024b1290b1e5037fbe213de32546b1e6e6eaeda21cd65f8093618d45ee9a7",
+      "reason": "Replace deprecated Mathlib integer-order import with its canonical module."
+    },
+    {
+      "file": "SmallPresentation/UniversalGroup/Higman/Recognizer/Code.lean",
+      "before_sha256": "421fc946a16b08b2034149ee460fb8bdc3fa20852d9a21a864a3b1e21f5650c4",
+      "local_sha256": "79f491acce45f760722d18f6622bbd00554a856ba8f812249ba6c834acbaff56",
+      "reason": "Replace deprecated Mathlib integer-order import with its canonical module."
+    },
+    {
+      "file": "SmallPresentation/UniversalGroup/Coding/Thue/PriorityForward.lean",
+      "before_sha256": "9748aa8ff30017fe9384aba4b9bdd694b541110cd30043db6d1d5871ed34b78f",
+      "local_sha256": "20976af7425f60439222f0fd1f2965085b51393d909624bdd0abc3ed05153fc7",
+      "reason": "Remove two ineffective try rfl tactics reported by the unused-tactic linter."
+    }
+  ],
+  "source_roots": [
+    "SmallPresentation/UniversalGroup.lean",
+    "SmallPresentation/UniversalGroup"
+  ],
+  "verification_guide": "VERIFICATION.md",
+  "local_module_prefix": "SmallPresentation.UniversalGroup",
+  "local_namespace": "UniversalGroup",
+  "relocation": "All 180 included modules are relocated under SmallPresentation; local import paths are updated and mathematical declarations retain their original namespace.",
+  "port_patch_sha256": "f32cf84147b5dd63b7d389e28586d4bebb2a00d7f40bda6e5b6e9f3f3fc093df",
+  "patch_scope": "Rename all 180 retained modules under SmallPresentation and update local imports, including the documented toolchain and shared-API integration edits. Unselected upstream files and SmallGroups build configuration are outside this patch."
+}

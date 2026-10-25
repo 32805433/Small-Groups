@@ -1,0 +1,26 @@
+module
+
+public import SmallPresentation.SmallCancellationGeometryPairingComponents
+public import SmallPresentation.FreeGroupCentralizerPeiffer
+public import SmallPresentation.RelationIdentityRows
+public import SmallPresentation.RelationTorsionRows
+public import SmallPresentation.CyclicModuleRepresentation
+public import SmallPresentation.CyclicModuleDecomposition
+public import SmallPresentation.SmallCancellationGeometryEdgeContractionBoundary
+public import SmallPresentation.SmallCancellationGeometryRelativeRegionBoundary
+public import SmallPresentation.SmallCancellationDipoleIdentityReduction
+
+public import SmallPresentation.SmallCancellationGeometryRelativeExtractionComponent
+public import SmallPresentation.SmallCancellationGeometryRadialComponentBoundary
+public import SmallPresentation.SmallCancellationCanonicalBalance
+public import SmallPresentation.SmallCancellationDipoleRelativeAlignment
+public import SmallPresentation.SmallCancellationDipoleRelativeSplicePotential
+public import SmallPresentation.SmallCancellationDipoleRelativeEndpointFaces
+
+public import SmallPresentation.SmallCancellationFactorEmbedding
+public import SmallPresentation.SmallCancellationDipolePairFactorRetained
+
+/-! Reusable metric small-cancellation foundations. Actual finite spherical pictures,
+old-disc erasure, indexed dipole deletion and quotient-weighted balance are proved.
+The weighted theorem assumes factor embeddings explicitly; those embeddings are now
+proved independently by actual marked-picture minimality and factor-disc replacement. -/

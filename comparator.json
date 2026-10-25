@@ -1,0 +1,15 @@
+{
+  "challenge_module": "SmallPresentationStatements",
+  "solution_module": "SmallPresentation",
+  "theorem_names": [
+    "SmallPresentationStatements.exists_two_three_universal_with_abelianization_Z",
+    "SmallPresentationStatements.exists_two_four_universal_adian_rabin_family",
+    "SmallPresentationStatements.exists_torsion_free_two_four_with_abelianization",
+    "SmallPresentationStatements.exists_torsion_free_two_five_adian_rabin_family"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

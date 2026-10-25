@@ -1,0 +1,952 @@
+{
+  "repository": "https://github.com/32805433/Adian-Rabin",
+  "commit": "fb4a401e8fbdba36e7b35c11fde2baa15592e185",
+  "port_patch": "provenance/AdianRabin.patch",
+  "port_patch_sha256": "43f4ea14a67d5b8d5c544f1498ddbc4e018d72fcf29ae5193688b8f4af69b86c",
+  "patch_scope": "Rename and adapt the 31 retained modules listed in provenance/AdianRabin.json. Unselected upstream files remain unchanged, including the 26 superseded modules. Canonical UniversalGroup sources and SmallGroups build configuration are separate dependencies and are not included in this patch.",
+  "original_toolchain": "leanprover/lean4:v4.33.0",
+  "files": [
+    {
+      "source": "GroupUndecidability/AdianRabin/Gordon/Amalgam.lean",
+      "sha256_original": "0c9754a4ae871d85ab8f2804bdcc4c96b59ca8274d91a9bc04bbe54de9c73ad2",
+      "local": "SmallPresentation/AdianRabin/Gordon/Amalgam.lean",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Consolidate the Undecidability namespace into UniversalGroup and reuse canonical shared definitions; retain only required distinct results/specializations.",
+        "Relocate under SmallPresentation.AdianRabin, flatten the repeated AdianRabin directory, and update local module imports."
+      ],
+      "sha256_local": "bd7e94e0cbc47209f3db7e99379bb06ad4cb2f4e596b5bc51111026e962e623a"
+    },
+    {
+      "source": "GroupUndecidability/AdianRabin/Gordon/Construction.lean",
+      "sha256_original": "49cf1ba5ff5d0d3f7b0b8da029f67f4b7dc79bfa038ceb45ccea417c3174e2c4",
+      "local": "SmallPresentation/AdianRabin/Gordon/Construction.lean",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename FreeGroup induction case C1 to one",
+        "Use direct IsCyclic constructor instead of relocated subgroup lemma",
+        "Consolidate the Undecidability namespace into UniversalGroup and reuse canonical shared definitions; retain only required distinct results/specializations.",
+        "Relocate under SmallPresentation.AdianRabin, flatten the repeated AdianRabin directory, and update local module imports."
+      ],
+      "sha256_local": "5105b98d65cc43a9b79caf309566aaadd8f5c742f567be6f30b881e2956c95fd",
+      "canonical_imports": [
+        "SmallPresentation.UniversalGroup.Computability.Generators"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/AdianRabin/Gordon/Embedding.lean",
+      "sha256_original": "645c3c74e5ef424887330bd96f516537d892e07eeff71ba0e46fdeae5aa0e1c5",
+      "local": "SmallPresentation/AdianRabin/Gordon/Embedding.lean",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Consolidate the Undecidability namespace into UniversalGroup and reuse canonical shared definitions; retain only required distinct results/specializations.",
+        "Relocate under SmallPresentation.AdianRabin, flatten the repeated AdianRabin directory, and update local module imports."
+      ],
+      "sha256_local": "ce88f44a1e3dd4acdd62ed7bb140891363d772d773dee7a662a6e1b1ed6875a4"
+    },
+    {
+      "source": "GroupUndecidability/AdianRabin/Gordon/LeftNormalForm.lean",
+      "sha256_original": "51e9d8f9ca489eb6b4dfca98eb93fec84dbd70f0d7f813bbd977898e5273f658",
+      "local": "SmallPresentation/AdianRabin/Gordon/LeftNormalForm.lean",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Consolidate the Undecidability namespace into UniversalGroup and reuse canonical shared definitions; retain only required distinct results/specializations.",
+        "Relocate under SmallPresentation.AdianRabin, flatten the repeated AdianRabin directory, and update local module imports."
+      ],
+      "sha256_local": "40559d49e2065adb7b71eddf26f49c854dc9555b66eeaf3b9724b13cff42abc5"
+    },
+    {
+      "source": "GroupUndecidability/AdianRabin/Gordon/RightNormalForm.lean",
+      "sha256_original": "a6dadb47ff837c667701649ccd5271f90afe5d9f9a22955e1159407599fe6e1a",
+      "local": "SmallPresentation/AdianRabin/Gordon/RightNormalForm.lean",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Consolidate the Undecidability namespace into UniversalGroup and reuse canonical shared definitions; retain only required distinct results/specializations.",
+        "Relocate under SmallPresentation.AdianRabin, flatten the repeated AdianRabin directory, and update local module imports."
+      ],
+      "sha256_local": "6bf884fccd026c1fe897058cdbb4ff64661633b90465da91821dfd8caa4e6046"
+    },
+    {
+      "source": "GroupUndecidability/AdianRabin/MillerTancer/LeftNormalForm.lean",
+      "sha256_original": "35058c6462fca8b0bed2abc76c565a1cbc4a8b9dcf7363bf65de823868c3d89d",
+      "local": "SmallPresentation/AdianRabin/MillerTancer/LeftNormalForm.lean",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Consolidate the Undecidability namespace into UniversalGroup and reuse canonical shared definitions; retain only required distinct results/specializations.",
+        "Relocate under SmallPresentation.AdianRabin, flatten the repeated AdianRabin directory, and update local module imports."
+      ],
+      "sha256_local": "d68a85c67931fdb94d44d771dde9d2f619c3650d0cf8853d28036e3b035cf3a3"
+    },
+    {
+      "source": "GroupUndecidability/Computability.lean",
+      "sha256_original": "b62db6472bb5d0b5271dbaffc7843ab2a054d2ab4caf2997a7dae8014869d8dc",
+      "local": "SmallPresentation/AdianRabin/Computability.lean",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Consolidate the Undecidability namespace into UniversalGroup and reuse canonical shared definitions; retain only required distinct results/specializations.",
+        "Relocate under SmallPresentation.AdianRabin, flatten the repeated AdianRabin directory, and update local module imports."
+      ],
+      "sha256_local": "a8536e373fb39eee15865ab6b68c1878ed81774dd3e9bf69b89e7fe21669720c"
+    },
+    {
+      "source": "GroupUndecidability/GroupTheory/CoprodILemmas.lean",
+      "sha256_original": "fe5ae8289df7f07cd3d32ac332898acd6dbe2d8f94131b7abc1b783526404d2d",
+      "local": "SmallPresentation/AdianRabin/GroupTheory/CoprodILemmas.lean",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Import checked UniversalGroup.Foundations.Coproduct instead of redeclaring identical familyMap/familyMap_injective/intOfFree/intToFree/intOfFree_injective and their private helpers",
+        "Consolidate the Undecidability namespace into UniversalGroup and reuse canonical shared definitions; retain only required distinct results/specializations.",
+        "Relocate under SmallPresentation.AdianRabin, flatten the repeated AdianRabin directory, and update local module imports."
+      ],
+      "sha256_local": "39a887743e0bdc685b70e49434a5a29dc6ac25c30c6d7cc342127ffe0d4ae89f",
+      "canonical_imports": [
+        "SmallPresentation.UniversalGroup.Foundations.Coproduct"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Presentation.lean",
+      "sha256_original": "6d1eeee6261f1bff9db8ead1ef541ba7f6d3a6fe9a0adba1bcf5a75da81bf5cd",
+      "local": "SmallPresentation/AdianRabin/Presentation.lean",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Replace deprecated if_true/if_false aliases by ite_true/ite_false",
+        "Pass f := x explicitly to PresentedGroup.toGroup",
+        "Consolidate the Undecidability namespace into UniversalGroup and reuse canonical shared definitions; retain only required distinct results/specializations.",
+        "Relocate under SmallPresentation.AdianRabin, flatten the repeated AdianRabin directory, and update local module imports."
+      ],
+      "sha256_local": "7b76ce61e42b1044feb161e17b234d077f7789a18f966c82fdefe7e8a4f1f561",
+      "canonical_imports": [
+        "SmallPresentation.UniversalGroup.Foundations.Presentation"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Borisov/Construction.lean",
+      "sha256_original": "e7b835ad4e4a093109c075a8706a8a89aa4859bee598906b425cf3707cdd51d2",
+      "local": "SmallPresentation/AdianRabin/Borisov/Construction.lean",
+      "sha256_local": "e70a5b269cb32786c7d511d0a9137297cfa2d76625bd90e44603b100f6ef1dc8",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false",
+        "Consolidate the Undecidability namespace into UniversalGroup and reuse canonical shared definitions; retain only required distinct results/specializations.",
+        "Final review: reuse the existing commutator criterion without changing theorem signatures.",
+        "Relocate under SmallPresentation.AdianRabin, flatten the repeated AdianRabin directory, and update local module imports."
+      ],
+      "canonical_imports": [
+        "SmallPresentation.UniversalGroup.Simulator.Recognition.Forward"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Borisov/Criterion.lean",
+      "sha256_original": "566553e913ef673965d22be14e8b5449f87c5c8d598c079737c2a8c78583a7ed",
+      "local": "SmallPresentation/AdianRabin/Borisov/Criterion.lean",
+      "sha256_local": "3799a6196ee5f18b23edfccc96388cb1aae9f2c3b00beb4e072fa72a07034fd0",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false",
+        "Consolidate the Undecidability namespace into UniversalGroup and reuse canonical shared definitions; retain only required distinct results/specializations.",
+        "Relocate under SmallPresentation.AdianRabin, flatten the repeated AdianRabin directory, and update local module imports."
+      ],
+      "canonical_imports": [
+        "SmallPresentation.UniversalGroup.Simulator.Recognition.Core"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Borisov/Model/ConverseCore.lean",
+      "sha256_original": "94ecfd3aa3cb794f3845f4fda0a6c48bcf609b028700fd35b6b23163a8d53730",
+      "local": "SmallPresentation/AdianRabin/Borisov/Model/ConverseCore.lean",
+      "sha256_local": "81e822a330a084421914b90bc282cd33349f6e8334b999603b6350d8b663eadc",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false",
+        "Consolidate the Undecidability namespace into UniversalGroup and reuse canonical shared definitions; retain only required distinct results/specializations.",
+        "Relocate under SmallPresentation.AdianRabin, flatten the repeated AdianRabin directory, and update local module imports."
+      ],
+      "canonical_imports": [
+        "SmallPresentation.UniversalGroup.Simulator.Core.ContextNormalForm"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Borisov/Model/FinalModel.lean",
+      "sha256_original": "110f3fe716f04143843209cc42c6d11616e719a2dbc4351defd4882f0700b4e2",
+      "local": "SmallPresentation/AdianRabin/Borisov/Model/FinalModel.lean",
+      "sha256_local": "2da0e7c13b88e1fe9b04a493030ad920714dfbe736595f48dc52a05e7127ecf9",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false",
+        "Consolidate the Undecidability namespace into UniversalGroup and reuse canonical shared definitions; retain only required distinct results/specializations.",
+        "Final review: reuse the existing commutator criterion without changing theorem signatures.",
+        "Relocate under SmallPresentation.AdianRabin, flatten the repeated AdianRabin directory, and update local module imports."
+      ]
+    },
+    {
+      "source": "GroupUndecidability/GroupTheory/HNNLemmas.lean",
+      "sha256_original": "6a60319d4bd619eecb26ba8945c5acf343a38fa54067da7f5a1978ddabadd565",
+      "local": "SmallPresentation/AdianRabin/GroupTheory/HNNLemmas.lean",
+      "sha256_local": "a7d5b4609b66d5f36ba5871df7843068a47b7dd016e967105f49d79a2b12dcd9",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false",
+        "Consolidate the Undecidability namespace into UniversalGroup and reuse canonical shared definitions; retain only required distinct results/specializations.",
+        "Relocate under SmallPresentation.AdianRabin, flatten the repeated AdianRabin directory, and update local module imports."
+      ],
+      "canonical_imports": [
+        "SmallPresentation.UniversalGroup.Foundations.HNN.NormalForms"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Machine/FixedTuringMachine.lean",
+      "sha256_original": "23dd150189ac837d3594deaa2cc3aa265d2bbe8e3082af500378cbfd1a7d3f83",
+      "local": "SmallPresentation/AdianRabin/Machine/FixedTuringMachine.lean",
+      "sha256_local": "3429d8839ad0383d8aca8fbcd34b244d381e36f10d749adf47e46182972ea66f",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false",
+        "Import Mathlib.Computability.Halting explicitly after import reorganization",
+        "Consolidate the Undecidability namespace into UniversalGroup and reuse canonical shared definitions; retain only required distinct results/specializations.",
+        "Relocate under SmallPresentation.AdianRabin, flatten the repeated AdianRabin directory, and update local module imports."
+      ],
+      "canonical_imports": [
+        "SmallPresentation.UniversalGroup.Computability.Machine.PartialRecursiveMachine"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Machine/SupportedTM1Thue.lean",
+      "sha256_original": "c51bbf6b3b805286a0cbb8442241c3cc297b36fa49a5f608101c8c79f1a0c158",
+      "local": "SmallPresentation/AdianRabin/Machine/SupportedTM1Thue.lean",
+      "sha256_local": "12d0c123790b02c17433944e913702e134dd5d70f8114d95a777f40b69875f1a",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false",
+        "Consolidate the Undecidability namespace into UniversalGroup and reuse canonical shared definitions; retain only required distinct results/specializations.",
+        "Relocate under SmallPresentation.AdianRabin, flatten the repeated AdianRabin directory, and update local module imports."
+      ],
+      "canonical_imports": [
+        "SmallPresentation.UniversalGroup.Computability.Machine.SupportedTM1Thue"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Machine/TM1BinaryAdapter.lean",
+      "sha256_original": "d93b7ed3867f9f633e7219c6a19913bf57789696318151b757cb8cfe9c01b1e3",
+      "local": "SmallPresentation/AdianRabin/Machine/TM1BinaryAdapter.lean",
+      "sha256_local": "2076ce6d033ee2beb7642eaf8fd4ba2d6fb115658e5257f7d038422a6c5c1238",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false",
+        "Consolidate the Undecidability namespace into UniversalGroup and reuse canonical shared definitions; retain only required distinct results/specializations.",
+        "Relocate under SmallPresentation.AdianRabin, flatten the repeated AdianRabin directory, and update local module imports."
+      ],
+      "canonical_imports": [
+        "SmallPresentation.UniversalGroup.Computability.Machine.TM1BinaryAdapter"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Thue/Core.lean",
+      "sha256_original": "4fe237cfd41182173805365b58c97aa6214b026e122f6c28671ec5954ee62287",
+      "local": "SmallPresentation/AdianRabin/Thue/Core.lean",
+      "sha256_local": "a2d1c63241040191b24907005075e892fe0e140d2a3e149ee5016130aefc93c3",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false",
+        "Consolidate the Undecidability namespace into UniversalGroup and reuse canonical shared definitions; retain only required distinct results/specializations.",
+        "Relocate under SmallPresentation.AdianRabin, flatten the repeated AdianRabin directory, and update local module imports."
+      ],
+      "canonical_imports": [
+        "SmallPresentation.UniversalGroup.Coding.Thue.Core"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Thue/FiniteReindex.lean",
+      "sha256_original": "93d93384534f773ca8d0f7b141e8c8e4e4ad8bef369f91224ab8567ed1385c20",
+      "local": "SmallPresentation/AdianRabin/Thue/FiniteReindex.lean",
+      "sha256_local": "0bc0d1cf87e0ab8bbd326b318088639b3a46d0916b441ec905ccf1127f869bc5",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false",
+        "Consolidate the Undecidability namespace into UniversalGroup and reuse canonical shared definitions; retain only required distinct results/specializations.",
+        "Relocate under SmallPresentation.AdianRabin, flatten the repeated AdianRabin directory, and update local module imports."
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Thue/FixedSeed.lean",
+      "sha256_original": "544253959f1251baf6f1c7ef3a55db6ea7555248a8a184fefd648afba1028cc8",
+      "local": "SmallPresentation/AdianRabin/Thue/FixedSeed.lean",
+      "sha256_local": "3e3d774f22150c506006edfffc68eebddb86febd5cdbf45d205953aa07551720",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false",
+        "Consolidate the Undecidability namespace into UniversalGroup and reuse canonical shared definitions; retain only required distinct results/specializations.",
+        "Relocate under SmallPresentation.AdianRabin, flatten the repeated AdianRabin directory, and update local module imports."
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Thue/Matiyasevich/BinaryStage.lean",
+      "sha256_original": "6123bd099f216b7112fc29d96f4775268ab3540e1f9fd8eebcfc66ea9bc83c35",
+      "local": "SmallPresentation/AdianRabin/Thue/Matiyasevich/BinaryStage.lean",
+      "sha256_local": "30e8f3df86976409ffc1e392bd72a6460934db34bc119d7a9a17adb892e5e2a2",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false",
+        "Alpha-rename formerly private alphabet aliases to binaryA/binaryB to prevent namespace shadowing",
+        "Consolidate the Undecidability namespace into UniversalGroup and reuse canonical shared definitions; retain only required distinct results/specializations.",
+        "Relocate under SmallPresentation.AdianRabin, flatten the repeated AdianRabin directory, and update local module imports."
+      ],
+      "canonical_imports": [
+        "SmallPresentation.UniversalGroup.Coding.Thue.BinaryStage"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Thue/Matiyasevich/Compression.lean",
+      "sha256_original": "7eac135f4ce3db7306e9b2fa7c2d18e52dbf0c83c24155ebe4a8bad41ab136f1",
+      "local": "SmallPresentation/AdianRabin/Thue/Matiyasevich/Compression.lean",
+      "sha256_local": "160224fa0ca2ca497b49aa945ed8369b85c64aa1ac2cb4d8bd30e9e8f95c4fe5",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false",
+        "Consolidate the Undecidability namespace into UniversalGroup and reuse canonical shared definitions; retain only required distinct results/specializations.",
+        "Relocate under SmallPresentation.AdianRabin, flatten the repeated AdianRabin directory, and update local module imports."
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Thue/Matiyasevich/ContextualSelection.lean",
+      "sha256_original": "fba338df505ef0bcae8038a6b831c87666ba577b711328ca57bf95b91aba5327",
+      "local": "SmallPresentation/AdianRabin/Thue/Matiyasevich/ContextualSelection.lean",
+      "sha256_local": "357b1cb6b44b6a37624f5f8797267f85da0d3f36f31cf5c840301e8dfca6a9d1",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false",
+        "Consolidate the Undecidability namespace into UniversalGroup and reuse canonical shared definitions; retain only required distinct results/specializations.",
+        "Relocate under SmallPresentation.AdianRabin, flatten the repeated AdianRabin directory, and update local module imports."
+      ],
+      "canonical_imports": [
+        "SmallPresentation.UniversalGroup.Coding.Thue.ContextualSelection"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Thue/Matiyasevich/FinalStage.lean",
+      "sha256_original": "0c535b13d6b932f9a4abf3420b4b35ce9e208412cc8aa5b25b295cd1e4f7edd1",
+      "local": "SmallPresentation/AdianRabin/Thue/Matiyasevich/FinalStage.lean",
+      "sha256_local": "d14035b19cffb7690028600f70c1d512a727a8832f0b0d8f2d7911290057dbd0",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false",
+        "Alpha-rename formerly private alphabet aliases to finalStageA/finalStageB/finalStageE to prevent namespace shadowing",
+        "Consolidate the Undecidability namespace into UniversalGroup and reuse canonical shared definitions; retain only required distinct results/specializations.",
+        "Relocate under SmallPresentation.AdianRabin, flatten the repeated AdianRabin directory, and update local module imports."
+      ],
+      "canonical_imports": [
+        "SmallPresentation.UniversalGroup.Coding.Thue.FinalStage"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Thue/Matiyasevich/Padding.lean",
+      "sha256_original": "1a742a535f4bdfc56a86f63666de918a4b36bb58d99cc7dfc50715ce65984806",
+      "local": "SmallPresentation/AdianRabin/Thue/Matiyasevich/Padding.lean",
+      "sha256_local": "8d9de158446cadc6138a1c4549ea893c86ffdfd813402285695a8984112263d9",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false",
+        "Consolidate the Undecidability namespace into UniversalGroup and reuse canonical shared definitions; retain only required distinct results/specializations.",
+        "Relocate under SmallPresentation.AdianRabin, flatten the repeated AdianRabin directory, and update local module imports."
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Thue/Matiyasevich/PriorityForward.lean",
+      "sha256_original": "1d4a6d5d4990e1b233e2722dd507246c4f0c24f087572c38c968fb9088dee61f",
+      "local": "SmallPresentation/AdianRabin/Thue/Matiyasevich/PriorityForward.lean",
+      "sha256_local": "31f899da8808d6a8b63d1a98f0509dc6942d990f8f535e8294ba879b0956229c",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false",
+        "Consolidate the Undecidability namespace into UniversalGroup and reuse canonical shared definitions; retain only required distinct results/specializations.",
+        "Relocate under SmallPresentation.AdianRabin, flatten the repeated AdianRabin directory, and update local module imports."
+      ],
+      "canonical_imports": [
+        "SmallPresentation.UniversalGroup.Coding.Thue.PriorityForward"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Thue/Matiyasevich/PriorityReflection.lean",
+      "sha256_original": "4d932caf6e0a060afe5a0832306daa388bbacf538dbb257b714becc6850e9a8f",
+      "local": "SmallPresentation/AdianRabin/Thue/Matiyasevich/PriorityReflection.lean",
+      "sha256_local": "bfdb7c5e82a6491ae55a31bd5ee5d61844bd93a00b4037cf82de9ecc5a4310cf",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false",
+        "Consolidate the Undecidability namespace into UniversalGroup and reuse canonical shared definitions; retain only required distinct results/specializations.",
+        "Relocate under SmallPresentation.AdianRabin, flatten the repeated AdianRabin directory, and update local module imports."
+      ],
+      "canonical_imports": [
+        "SmallPresentation.UniversalGroup.Coding.Thue.PriorityReflection"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Thue/Matiyasevich/PriorityStage.lean",
+      "sha256_original": "8695b41c691c48f0feb3627f7173a9f83b8ccb3d3c7b82f2cfc322151191adcf",
+      "local": "SmallPresentation/AdianRabin/Thue/Matiyasevich/PriorityStage.lean",
+      "sha256_local": "fb131c75cf3f6a0fe5a7da7bd0e12588ad6f9142dbe7b11e72310308fec16452",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false",
+        "Consolidate the Undecidability namespace into UniversalGroup and reuse canonical shared definitions; retain only required distinct results/specializations.",
+        "Relocate under SmallPresentation.AdianRabin, flatten the repeated AdianRabin directory, and update local module imports."
+      ],
+      "canonical_imports": [
+        "SmallPresentation.UniversalGroup.Coding.Thue.PriorityStage"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Thue/Matiyasevich/Reduction.lean",
+      "sha256_original": "c33b8a61b9f798c7f9d2a857be744e11ff6dd527813032f27cc00eae51a77d3f",
+      "local": "SmallPresentation/AdianRabin/Thue/Matiyasevich/Reduction.lean",
+      "sha256_local": "3b45a5296eec90ab27b4da01daaa4eeaed5b7e9ec5d0a1de6e6f18ba54990fe9",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false",
+        "Consolidate the Undecidability namespace into UniversalGroup and reuse canonical shared definitions; retain only required distinct results/specializations.",
+        "Relocate under SmallPresentation.AdianRabin, flatten the repeated AdianRabin directory, and update local module imports."
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Thue/Matiyasevich/RowSelection.lean",
+      "sha256_original": "e593657a932546cf331c04fabdd935e48cc88d95592d202fd82a779b4c4c00d7",
+      "local": "SmallPresentation/AdianRabin/Thue/Matiyasevich/RowSelection.lean",
+      "sha256_local": "a9779e32d4b3903ed90f366031a2b5c4e64488db15073c3fd2b955787f250448",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false",
+        "Consolidate the Undecidability namespace into UniversalGroup and reuse canonical shared definitions; retain only required distinct results/specializations.",
+        "Relocate under SmallPresentation.AdianRabin, flatten the repeated AdianRabin directory, and update local module imports."
+      ],
+      "canonical_imports": [
+        "SmallPresentation.UniversalGroup.Coding.Thue.RowSelection"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Thue/StandingDatum.lean",
+      "sha256_original": "036951b2a358d3e96360647f5b5728f9d1cdb1a02d4bfad1bd5d1078a42db55c",
+      "local": "SmallPresentation/AdianRabin/Thue/StandingDatum.lean",
+      "sha256_local": "d95b243378e409894040d99c6f8bb4ec32acd7568c0e9647a1f5d1e616b0c40c",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false",
+        "Consolidate the Undecidability namespace into UniversalGroup and reuse canonical shared definitions; retain only required distinct results/specializations.",
+        "Relocate under SmallPresentation.AdianRabin, flatten the repeated AdianRabin directory, and update local module imports."
+      ],
+      "canonical_imports": [
+        "SmallPresentation.UniversalGroup.Simulator.Core.SupportedRules"
+      ]
+    }
+  ],
+  "ported_toolchain": "leanprover/lean4:v4.35.0",
+  "checked_roots": [
+    "SmallPresentationStatements.Gordon.sourceHom_injective",
+    "SmallPresentationStatements.Gordon.exists_embedding",
+    "SmallPresentationStatements.UndecidableSeed.exists_undecidable_word_problem",
+    "UniversalGroup.Borisov.criterion",
+    "UniversalGroup.Thue.exists_standingDatum"
+  ],
+  "build_roots": [
+    "SmallPresentation.AdianRabin.Gordon.Embedding",
+    "SmallPresentation.AdianRabin.Borisov.Criterion"
+  ],
+  "external_common_foundations": [
+    "SmallPresentation.UniversalGroup.Foundations.Coproduct"
+  ],
+  "axiom_audit": {
+    "result": "Only propext, Classical.choice, Quot.sound",
+    "combined_imports": [
+      "SmallPresentation.GordonInjection",
+      "SmallPresentation.UndecidableSeed",
+      "SmallPresentation.Seed"
+    ],
+    "scope": "Recorded development audit before source relocation; no build or axiom audit has been rerun for the current source layout."
+  },
+  "superseded_files": [
+    {
+      "source": "GroupUndecidability/Borisov/Assertions/AssertionIV.lean",
+      "sha256_original": "b84436772969a97be7ee0dde58409e0007b0fac702ccc79b92bee8f76b29ed5d",
+      "local": "SmallPresentation/GordonUpstream/Borisov/Assertions/AssertionIV.lean",
+      "sha256_local": "ee06220af786988da14bd436f1740a1db1ecebbe658645f5b07467cd8bbccdd2",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false"
+      ],
+      "status": "removed after consolidating shared implementation",
+      "replacement_imports": [
+        "SmallPresentation.UniversalGroup.Simulator.Core.FreeBasis"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Borisov/Assertions/AssertionIVBoundary.lean",
+      "sha256_original": "401c01989026f6316312bd21390d1a69a8a4bcd84d82e5dc974c5a74fe981665",
+      "local": "SmallPresentation/GordonUpstream/Borisov/Assertions/AssertionIVBoundary.lean",
+      "sha256_local": "fc569d8f387d2dee6884a7d039b04730a1c70134fa4a4b8b307612a690864515",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false"
+      ],
+      "status": "removed after consolidating shared implementation",
+      "replacement_imports": [
+        "SmallPresentation.UniversalGroup.Simulator.Core.BoundaryPinch"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Borisov/Assertions/AssertionV.lean",
+      "sha256_original": "fc53e493ebbb33d4a4d4e7f5b9b619dbb677529a6f7f8fbbece1a6a8ba826be7",
+      "local": "SmallPresentation/GordonUpstream/Borisov/Assertions/AssertionV.lean",
+      "sha256_local": "2fb22bb015631d51d37b21554a45e15e54f3d9930ebe3f3f1ea60b6135e000cd",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false"
+      ],
+      "status": "removed after consolidating shared implementation",
+      "replacement_imports": [
+        "SmallPresentation.UniversalGroup.Simulator.Core.BaseIntersections"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Borisov/Assertions/CoefficientShapes.lean",
+      "sha256_original": "be0e1804e75df03de36549146d180e8ae4f11425e1a4b16e282d3307064713a1",
+      "local": "SmallPresentation/GordonUpstream/Borisov/Assertions/CoefficientShapes.lean",
+      "sha256_local": "558a280e31a4ba36a15a566565ac8f720797511f73efbbc62b1e140f0aff5667",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false"
+      ],
+      "status": "removed after consolidating shared implementation",
+      "replacement_imports": [
+        "SmallPresentation.UniversalGroup.Simulator.Core.CoefficientShapes"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Borisov/Assertions/CoefficientSigns.lean",
+      "sha256_original": "1bb242f432fa80c3ca69e5e8b8e99e2edd7279c46508a0405e98e138e34125f9",
+      "local": "SmallPresentation/GordonUpstream/Borisov/Assertions/CoefficientSigns.lean",
+      "sha256_local": "3931b827a5c4204f10830255794070f0a7502fe77588623663e7df28593d93b3",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false"
+      ],
+      "status": "removed after consolidating shared implementation",
+      "replacement_imports": [
+        "SmallPresentation.UniversalGroup.Simulator.Core.CoefficientSigns"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Borisov/Assertions/ConditionalConverse.lean",
+      "sha256_original": "e2d2e0fb167f0af1d54ffdf24cba0eadd8580c45325bdbb602e9a97fb192c79e",
+      "local": "SmallPresentation/GordonUpstream/Borisov/Assertions/ConditionalConverse.lean",
+      "sha256_local": "89a0c8b2029c3c5e084eb331b048819b7d3af81676a4cde215e594ca6edea916",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false"
+      ],
+      "status": "removed after consolidating shared implementation",
+      "replacement_imports": [
+        "SmallPresentation.UniversalGroup.Simulator.Recognition.Core"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Borisov/Assertions/InputsBridge.lean",
+      "sha256_original": "b9965c47660795a4baab58f59259fd2413a13e66c605c4f30da5298e8595569d",
+      "local": "SmallPresentation/GordonUpstream/Borisov/Assertions/InputsBridge.lean",
+      "sha256_local": "82e7335051089958d9c8c715fdacdab386e249b4fcbb7736f92f44dd1eb6e2af",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false"
+      ],
+      "status": "removed after consolidating shared implementation",
+      "replacement_imports": [
+        "SmallPresentation.UniversalGroup.Simulator.Core.IntersectionsTransport"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Borisov/Assertions/Lemma4Pinch.lean",
+      "sha256_original": "24c0727ecdb234ba1f0701be70a1130c0d8295e2fbb041c75b814076c8fef4ba",
+      "local": "SmallPresentation/GordonUpstream/Borisov/Assertions/Lemma4Pinch.lean",
+      "sha256_local": "47d96b781dd2581db1953ef87c8b4af2cd599472bd26f5230cd11320a3f147e2",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false"
+      ],
+      "status": "removed after consolidating shared implementation",
+      "replacement_imports": [
+        "SmallPresentation.UniversalGroup.Simulator.Core.Lemma4Pinch"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Borisov/Assertions/PinchCoefficientClassification.lean",
+      "sha256_original": "b6baa05802168fdf7d2517b978710ea71250da4df759e954708353684354b4d9",
+      "local": "SmallPresentation/GordonUpstream/Borisov/Assertions/PinchCoefficientClassification.lean",
+      "sha256_local": "816b09106450ec13fd46f942350841a6787f3b3afbda06daa8e0b5001553f3b2",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false"
+      ],
+      "status": "removed after consolidating shared implementation",
+      "replacement_imports": [
+        "SmallPresentation.UniversalGroup.Simulator.Core.PinchCoefficientClassification"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Borisov/Mod5/BaseWords.lean",
+      "sha256_original": "1e5229b9bf732aa5ce15809495ac05d5767d7497cb2b364500e4c62f79b855ee",
+      "local": "SmallPresentation/GordonUpstream/Borisov/Mod5/BaseWords.lean",
+      "sha256_local": "9232b02216bb61cc4b6b072f9fad5d775233bd2d31a676f0198ca7f8be550c93",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false"
+      ],
+      "status": "removed after consolidating shared implementation",
+      "replacement_imports": [
+        "SmallPresentation.UniversalGroup.Simulator.Core.Mod5.BaseWords"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Borisov/Mod5/Quotient.lean",
+      "sha256_original": "91c2ea84edf1ecad5d203bdbb6a48fe3712c3f04558a0dd5feb536a348b2bdb4",
+      "local": "SmallPresentation/GordonUpstream/Borisov/Mod5/Quotient.lean",
+      "sha256_local": "d502873d78b453ef25d14493ea61a757c96be9826220b5bb17a19ccae5b9d1e6",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false"
+      ],
+      "status": "removed after consolidating shared implementation",
+      "replacement_imports": [
+        "SmallPresentation.UniversalGroup.Simulator.Core.Mod5.Quotient"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Borisov/Mod5/Sparsity.lean",
+      "sha256_original": "d06400772c051d698e3ae4d1e6fda2e9f993c4428e9af9e435eb9839289498ce",
+      "local": "SmallPresentation/GordonUpstream/Borisov/Mod5/Sparsity.lean",
+      "sha256_local": "0e3e810f7489ea8e10b962f2f0db4f7e6210f1239e00f4c77e73ea9518efa4a0",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false"
+      ],
+      "status": "removed after consolidating shared implementation",
+      "replacement_imports": [
+        "SmallPresentation.UniversalGroup.Simulator.Core.Mod5.Sparsity"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Borisov/Mod5/WordLength.lean",
+      "sha256_original": "5c7820f01593ea345a2e714cc9f63008447a0a3e4c2c33b22aaa3c0d328c9f66",
+      "local": "SmallPresentation/GordonUpstream/Borisov/Mod5/WordLength.lean",
+      "sha256_local": "7797e96521be0023c48578d0a7b35d0887c62cc7635e9a9c56b88984b738bb6e",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false"
+      ],
+      "status": "removed after consolidating shared implementation",
+      "replacement_imports": [
+        "SmallPresentation.UniversalGroup.Simulator.Core.Mod5.WordLength"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Borisov/Model/CStage.lean",
+      "sha256_original": "394c6fb94e138b53d89e62644accbb49be38eff5761403bcb166aac860e9f40e",
+      "local": "SmallPresentation/GordonUpstream/Borisov/Model/CStage.lean",
+      "sha256_local": "8f02f2e55d80636f2be0f4b3e749cec56d65686cf251340b4506e906e1a6cb45",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false"
+      ],
+      "status": "removed after consolidating shared implementation",
+      "replacement_imports": [
+        "SmallPresentation.UniversalGroup.Simulator.Core.RecognitionContexts"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Borisov/Model/ContextNormalForm.lean",
+      "sha256_original": "0a371f479676602700b573e0118bec323a1a3589e01758d994fc51ccd64d24c2",
+      "local": "SmallPresentation/GordonUpstream/Borisov/Model/ContextNormalForm.lean",
+      "sha256_local": "b304ce31af6e8eb96e714de58f911695cc7dd21aeabb6b42c667905a9e1cae6e",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false"
+      ],
+      "status": "removed after consolidating shared implementation",
+      "replacement_imports": [
+        "SmallPresentation.UniversalGroup.Simulator.Core.ContextNormalForm"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Borisov/Model/G0HNN.lean",
+      "sha256_original": "3891cef2cc2641172812c2aac433918125f5fd01ae51d1bd30ce62b22ff8c076",
+      "local": "SmallPresentation/GordonUpstream/Borisov/Model/G0HNN.lean",
+      "sha256_local": "fc00e796689353c4e1b2cc3e59a1480c65ae196278799aa0e685818bb4522fe9",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false",
+        "Import Mathlib.Tactic.Group explicitly after import reorganization"
+      ],
+      "status": "removed after consolidating shared implementation",
+      "replacement_imports": [
+        "SmallPresentation.UniversalGroup.Simulator.Core.BaseHNN"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Borisov/Model/G0NormalForm.lean",
+      "sha256_original": "d4d5626dad805ff2f46a7f159e7f5953d7b919fff9b94499c6d68dbe7bbb317a",
+      "local": "SmallPresentation/GordonUpstream/Borisov/Model/G0NormalForm.lean",
+      "sha256_local": "fc853528e5d69f657e2d7e300b8a782b760de3c7098d2d9bb9000ba3c6b3cea6",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false"
+      ],
+      "status": "removed after consolidating shared implementation",
+      "replacement_imports": [
+        "SmallPresentation.UniversalGroup.Simulator.Core.BaseNormalForm"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Borisov/Model/HNNModel.lean",
+      "sha256_original": "f476c4c3b7b0ba15fc296cf8f2212a33aa25ed0afa2d619d1f4f3bc57b8f0d25",
+      "local": "SmallPresentation/GordonUpstream/Borisov/Model/HNNModel.lean",
+      "sha256_local": "6a394cf14eb1c31aae6c654443dc579a284eaa8d5ca05279b7d1679f191c7b4f",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false"
+      ],
+      "status": "removed after consolidating shared implementation",
+      "replacement_imports": [
+        "SmallPresentation.UniversalGroup.Simulator.Core.PowerHNNModel"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Borisov/Model/Intersections.lean",
+      "sha256_original": "0abf242fe02c697a2018cbe729ddcdada5adcca1bc7d68771d71f119581fad05",
+      "local": "SmallPresentation/GordonUpstream/Borisov/Model/Intersections.lean",
+      "sha256_local": "cea4d5914844374dcd3be5431728bcdb6f621631b886167f79e474b0ff658cde",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false"
+      ],
+      "status": "removed after consolidating shared implementation",
+      "replacement_imports": [
+        "SmallPresentation.UniversalGroup.Simulator.Core.IntersectionData"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/GroupTheory/MultipleHNN.lean",
+      "sha256_original": "544b2572c3e0f8202b0e6f06c2c36010a93e2b019ede71ce9cb580bc1fa6de62",
+      "local": "SmallPresentation/GordonUpstream/GroupTheory/MultipleHNN.lean",
+      "sha256_local": "5d5b527ce043f26db0f2e762680e31dc62c8166a9a5dbaa25dc1b05685b361bb",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false"
+      ],
+      "status": "removed after consolidating shared implementation",
+      "replacement_imports": [
+        "SmallPresentation.UniversalGroup.Foundations.HNN.Multiple"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/GroupTheory/MultipleHNN/Flat.lean",
+      "sha256_original": "ff6148aa208895669c51affb02da5a534bc5736aa33d1f0ab6a4161b2ef3df3a",
+      "local": "SmallPresentation/GordonUpstream/GroupTheory/MultipleHNN/Flat.lean",
+      "sha256_local": "7b641822a78c3bec06aaf15ab55b25c06cf85645156e234c35dbf71be583ac45",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false"
+      ],
+      "status": "removed after consolidating shared implementation",
+      "replacement_imports": [
+        "SmallPresentation.UniversalGroup.Foundations.HNN.Multiple.Flat"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/GroupTheory/MultipleHNN/FlatUniqueness.lean",
+      "sha256_original": "0ca6a5de3ca28cfee73f73203ae1a5629968701f3afcca4cf478788de9f93930",
+      "local": "SmallPresentation/GordonUpstream/GroupTheory/MultipleHNN/FlatUniqueness.lean",
+      "sha256_local": "7f0249654cb87d6705ca48b5dafdbee04128c864064f5fb590b946376a1851e8",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false"
+      ],
+      "status": "removed after consolidating shared implementation",
+      "replacement_imports": [
+        "SmallPresentation.UniversalGroup.Foundations.HNN.Multiple.FlatUniqueness"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Machine/PostMachineThue.lean",
+      "sha256_original": "b2def7c612ecfa126f2e93c029bafb4e632433ef5ddd9380e73888af71380b9f",
+      "local": "SmallPresentation/GordonUpstream/Machine/PostMachineThue.lean",
+      "sha256_local": "0f495f30f7e9e7d7a8e5c1d9251da9e4868b3e29549b779865fc6ad34a218876",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false"
+      ],
+      "status": "removed after consolidating shared implementation",
+      "replacement_imports": [
+        "SmallPresentation.UniversalGroup.Computability.Machine.PostMachineThue"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Machine/TM0PostAdapter.lean",
+      "sha256_original": "3689ce721580097ace9507764632c95f8813f5a496709f8a70743a0c4bc4fd59",
+      "local": "SmallPresentation/GordonUpstream/Machine/TM0PostAdapter.lean",
+      "sha256_local": "81635dcb868226e3157cf5ca75354a4b4b8b3bb6554d617dfcfd02784e19fac2",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false"
+      ],
+      "status": "removed after consolidating shared implementation",
+      "replacement_imports": [
+        "SmallPresentation.UniversalGroup.Computability.Machine.TM0PostAdapter"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Machine/ThueBridge.lean",
+      "sha256_original": "bf0aa4cbbe20234d94500f6ff7c2249c4724bb4b7f5c00b029d0103eca287186",
+      "local": "SmallPresentation/GordonUpstream/Machine/ThueBridge.lean",
+      "sha256_local": "7a7eb8ba65a304e078f208a2e568aafd69759f0c26687cd2f28c4b05ca7a6b38",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false"
+      ],
+      "status": "removed after consolidating shared implementation",
+      "replacement_imports": [
+        "SmallPresentation.UniversalGroup.Computability.Machine.ThueBridge"
+      ]
+    },
+    {
+      "source": "GroupUndecidability/Thue.lean",
+      "sha256_original": "21674c49932426b71c1ba3f1a6f80a0b57bfa2444fb384027641689d94bae6fa",
+      "local": "SmallPresentation/GordonUpstream/Thue.lean",
+      "sha256_local": "e90deba28a773b214361ad686534c9da17766a59d9d9a14a563cca7d8f13f833",
+      "changes": [
+        "Rewrite local import prefix",
+        "Convert to module/public-import/exposed-public-section format",
+        "Expose formerly private helpers for module translation",
+        "Rename if_true/if_false to ite_true/ite_false"
+      ],
+      "status": "removed after consolidating shared implementation",
+      "replacement_imports": [
+        "SmallPresentation.AdianRabin.Thue.StandingDatum"
+      ]
+    }
+  ],
+  "deduplication": {
+    "baseline_run_id": "ac3a84a7-0dcf-4462-9029-682efd96c380",
+    "canonical_namespace": "UniversalGroup",
+    "canonical_repository": "https://github.com/32805433/Universal-Group",
+    "canonical_revision": "6416dd36ad22f3684583457f234519bafc851396",
+    "active_ported_modules": 31,
+    "removed_import_only_modules": 26,
+    "method": "Use the existing generic implementations, with proved specializations for the fixed undecidable seed and original fourteen-relator Borisov presentation; preserve Gordon free bases.",
+    "verification": "Build with lake --wfail build and run lake env lean AxiomAudit.lean for the rejecting axiom audit. Original and local hashes remain provenance records; the current workflow does not automatically compare them. See VERIFICATION.md for historical validation and current commands."
+  },
+  "superseded_files_note": "These entries retain their historical local paths and hashes from before source consolidation; replacement_imports name the current modules."
+}

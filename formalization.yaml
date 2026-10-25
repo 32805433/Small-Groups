@@ -1,0 +1,291 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+
+version: v0.4
+project:
+  name: SmallGroups
+  description: 'Lean 4 proofs of four existence theorems: a two-generator, three-relator universal
+    group with infinite cyclic abelianization and a displayed normal generator; an effective two-generator,
+    four-relator family with undecidable triviality and universal nontrivial members; a torsion-free
+    two-generator, four-relator group with undecidable word problem, infinite cyclic abelianization,
+    and a displayed normal generator; and an effective two-generator, five-relator family with undecidable
+    triviality whose members are all torsion-free. Counts refer to displayed generator and relator
+    slots, with redundancy allowed; no minimality is claimed. The universal and torsion-free groups
+    are separate witnesses.'
+  authors:
+  - Qiuyu Ren
+  responsible_maintainers:
+  - Qiuyu Ren
+  license: MIT
+classification:
+  arxiv:
+  - math.GR
+  - math.LO
+  msc2020:
+  - 20F05
+  - 20F10
+  - 03D35
+sources:
+- title: small_presentations_and_unrecognizable_four_manifolds.tex
+  type: other
+  filename: small_presentations_and_unrecognizable_four_manifolds.tex
+  version: '6'
+  date: '2026-10-23'
+  sha256: 6eacd269f18d4cfc8799006c80ddef739c537f18ebc1695d56451dca839441f1
+  location: Group-theoretic Sections 1–7
+  relationship: formalizes
+  included_in_publication: false
+  note: Unpublished working manuscript supplied for this development. The filename is used as the
+    source title because a separate bibliographic title and author list have not been supplied. Version,
+    date, and SHA256 identify the source used; no public URL is recorded. Only group-theoretic Sections
+    1–7 are formalized. Changes of proof method are described in FORMALIZATION.md; the manifold consequences
+    are outside scope.
+- title: A universal group with thirteen relators
+  type: other
+  id: https://hexagonmath.org/2610.00278
+  location: Section 7.1; hexagon:2610.00278v1
+  relationship: adapts
+  note: Universal seed construction. The reused Lean implementation is separately recorded under related_formalizations.
+- title: The topology of discrete groups
+  authors:
+  - G. Baumslag
+  - E. Dyer
+  - A. Heller
+  type: paper
+  id: https://doi.org/10.1016/0022-4049(80)90040-7
+  location: Sections 4–5 and Lemma 5.1
+  relationship: adapts
+  note: Finite mitosis construction.
+- title: The homology of groups, profinite completions, and echoes of Gilbert Baumslag
+  authors:
+  - M. R. Bridson
+  type: paper
+  id: https://doi.org/10.1515/9783110638387-003
+  location: Section 2.2
+  relationship: adapts
+  note: Central-extension methods; the local homological model is algebraic Hopf/Schur.
+- title: Aspherical relative presentations
+  authors:
+  - W. A. Bogley
+  - S. J. Pride
+  type: paper
+  id: https://doi.org/10.1017/S0013091500005290
+  location: Sections 1.2–1.7, 2.3, 3.3–3.4; Lemma 3.2 and Theorems 2.2, 3.8, 4.3
+  relationship: adapts
+  note: Relative-presentation and picture methods. The formalization proves the explicit metric free-product
+    results described in FORMALIZATION.md, rather than the full collection of the source theorems.
+- title: On the homeomorphism problem for 4-manifolds
+  authors:
+  - Cameron McA. Gordon
+  type: paper
+  id: https://doi.org/10.53733/205
+  location: Condition (2.1) and Lemma 2.1
+  relationship: adapts
+  note: Gordon attachment used in both effective families; the topology is outside scope.
+- title: Combinatorial Group Theory
+  authors:
+  - R. C. Lyndon
+  - P. E. Schupp
+  type: book
+  id: Springer, 1977
+  location: Chapter IV
+  relationship: background
+  note: Normal forms for HNN extensions and amalgamated products.
+related_formalizations:
+- id: https://github.com/32805433/Universal-Group/tree/6416dd36ad22f3684583457f234519bafc851396
+  revision: 6416dd36ad22f3684583457f234519bafc851396
+  relationship: adapts
+  authors:
+  - Qiuyu Ren
+  license: MIT
+  provenance_manifest: provenance/UniversalGroup.json
+  port_patch: provenance/UniversalGroup.patch
+  note: 180 retained modules, including the shared presentation, HNN, computability, and simulator
+    foundations and the universal-group construction. Local sources retain the upstream notices; see
+    FORMALIZATION.md.
+  upstream_automation:
+    methods:
+    - method: agent
+      models:
+      - GPT-6 Astra
+      role: Essentially all repository content, including the Lean formalization and documentation,
+        was produced under human direction, including adaptation of existing formalized arguments.
+- id: https://github.com/32805433/Adian-Rabin/tree/fb4a401e8fbdba36e7b35c11fde2baa15592e185
+  revision: fb4a401e8fbdba36e7b35c11fde2baa15592e185
+  relationship: adapts
+  authors:
+  - Marc Kegel
+  - Shana Yunsheng Li
+  - Qiuyu Ren
+  license: MIT
+  provenance_manifest: provenance/AdianRabin.json
+  port_patch: provenance/AdianRabin.patch
+  note: 31 retained and adapted modules, including Gordon attachment and the fixed undecidable-word-problem
+    construction; shared foundations are consolidated with UniversalGroup. Local sources retain the
+    upstream notices; see FORMALIZATION.md.
+  upstream_automation:
+    methods:
+    - method: agent
+      models:
+      - GPT-5.6 Sol Pro
+      tool_setup: Informal proof development, as reported in the paper, Section 1.6.
+      prompting_notes: Produced an informal proof of Theorem 1.1 in a companion PDF.
+    - method: agent
+      models:
+      - GPT-5.6 Sol
+      framework: Codex
+      tool_setup: Lean 4 and Mathlib, with iterative compilation, literature-guided proof development,
+        source audits, and statement verification.
+      prompting_notes: Formalized statements and a proof skeleton, discharged all temporary axioms,
+        constructed the Post/Matiyasevich route, formalized both Adian–Rabin reductions, and audited
+        and reorganized the development.
+    - method: agent
+      models:
+      - GPT-6
+      framework: Codex
+      tool_setup: Preparation and editing of project documentation, structured metadata, and verification
+        configuration; local build, axiom, and statement verification. Adapted existing proofs for
+        Lean and Mathlib 4.33.0, preserving the mathematical statements, and checked the resulting
+        build and transitive axiom dependencies.
+    notes: Essentially all Lean code was generated with AI assistance under human direction. The paper,
+      Section 1.6, reports manual checking of the theorem statements. Detailed cost and runtime measurements
+      are not available.
+status:
+  scope: Four group-theoretic existence results and their supporting proof library. Effectiveness
+    means joint computability of relator tables; undecidability means negation of ComputablePred.
+    The independent challenge contains four intentional proof placeholders and is excluded from proof-library
+    counts.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms:
+  - propext
+  - Classical.choice
+  - Quot.sound
+  main_results:
+  - declaration: SmallPresentationStatements.exists_two_three_universal_with_abelianization_Z
+    file: SmallPresentation.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: SmallPresentationStatements.exists_two_four_universal_adian_rabin_family
+    file: SmallPresentation.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: SmallPresentationStatements.exists_torsion_free_two_four_with_abelianization
+    file: SmallPresentation.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: SmallPresentationStatements.exists_torsion_free_two_five_adian_rabin_family
+    file: SmallPresentation.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+automation:
+  methods:
+  - method: agent
+    models:
+    - GPT-6 Astra
+    tool_setup: New SmallGroups proof development and working manuscript under human direction, as
+      reported by the maintainer.
+  - method: agent
+    models:
+    - GPT-6.1 Sol
+    framework: Codex
+    tool_setup: Publication-readiness inspection, structured metadata and documentation correction,
+      pinned dependency/cache retrieval, local proof build, fresh axiom audit, and independent challenge
+      elaboration.
+  notes: Substantial AI assistance under human direction. Model roles for reused sources are recorded
+    separately in related_formalizations[].upstream_automation, as disclosed at the pinned upstream
+    revisions; those disclosures concern the upstream projects. Costs and runtime measurements are
+    not recorded.
+fidelity:
+  divergences: 'Displayed presentation slots may be redundant, and no minimality is claimed. The universal
+    and torsion-free witnesses are separate. The manuscript conclusions are retained with the proof-method
+    changes documented in FORMALIZATION.md: algebraic Hopf/Schur APIs, direct lifting through two
+    mitoses, finite marked-picture factor injection, weighted identity balance, and a cyclic-module
+    torsion obstruction. No comparison with Mathlib chain-complex homology or topological manifold
+    result is claimed.'
+review:
+  status: unchecked
+  notes: No independent mathematical review or manual review of the four formal statements is recorded.
+    On 25 October 2026, the current relocated layout passed lake --wfail build (2,552 jobs, zero warnings
+    or errors), followed by a fresh execution of all 277 AxiomAudit.lean checkpoints. All four public
+    theorems reported exactly propext, Classical.choice, and Quot.sound. The independent statement
+    challenge also built successfully with exactly four expected sorry warnings and no errors. No
+    local Comparator run or additional kernel-replay result is recorded. See VERIFICATION.md for reproduction
+    commands and validation scope.
+  independent_mathematical_review: not claimed
+  external_comparator: not recorded
+  hosted_CI: configured; no hosted run claimed
+  local_validation:
+    date: '2026-10-25'
+    proof_build: passed; zero warnings or errors
+    axiom_audit: passed; all 277 checkpoints
+    statement_challenge: passed; four expected sorry warnings
+    comparator: not run locally; Palomar performs its own verification on submission
+limitations:
+- No local Comparator or additional kernel-replay result is recorded. A local Comparator run is optional
+  preparation; Palomar performs its own Comparator verification on the exact submitted public commit.
+- The four intentional sorry placeholders in SmallPresentationStatements.lean are comparison inputs;
+  the proved library does not import that module.
+- GitHub Actions is configured for the proof build, axiom audit, and challenge elaboration; no hosted
+  run or Comparator verdict is recorded.
+- The unpublished source manuscript is identified by filename, version, date, and SHA256; it is not
+  included in this publication.
+- The 601 proof-module inventory includes AxiomAudit.lean and excludes the independent statement challenge.
+toolchain: leanprover/lean4:v4.35.0
+mathlib_revision: 56a005855ea17e0b0958f73ec801ae140b0a1679
+theorems:
+- SmallPresentationStatements.exists_two_three_universal_with_abelianization_Z
+- SmallPresentationStatements.exists_two_four_universal_adian_rabin_family
+- SmallPresentationStatements.exists_torsion_free_two_four_with_abelianization
+- SmallPresentationStatements.exists_torsion_free_two_five_adian_rabin_family
+scope:
+  proof_modules: 601
+  audit_checkpoints: 277
+  intentional_challenge_placeholders: 4
+  permitted_axioms:
+  - propext
+  - Classical.choice
+  - Quot.sound
+provenance_manifests:
+- provenance/UniversalGroup.json
+- provenance/AdianRabin.json
+alignment:
+- declaration: SmallPresentationStatements.exists_two_three_universal_with_abelianization_Z
+  file: SmallPresentation.lean
+  statement: Two-generator, three-relator universal group with infinite cyclic abelianization and
+    a displayed normal generator.
+  comparator_config: comparator.json
+- declaration: SmallPresentationStatements.exists_two_four_universal_adian_rabin_family
+  file: SmallPresentation.lean
+  statement: Effective two-generator, four-relator family with undecidable triviality and universal
+    nontrivial members.
+  comparator_config: comparator.json
+- declaration: SmallPresentationStatements.exists_torsion_free_two_four_with_abelianization
+  file: SmallPresentation.lean
+  statement: Torsion-free two-generator, four-relator group with undecidable word problem, infinite
+    cyclic abelianization, and a displayed normal generator.
+  comparator_config: comparator.json
+- declaration: SmallPresentationStatements.exists_torsion_free_two_five_adian_rabin_family
+  file: SmallPresentation.lean
+  statement: Effective two-generator, five-relator family with undecidable triviality and torsion-free
+    members.
+  comparator_config: comparator.json

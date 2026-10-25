@@ -1,0 +1,2612 @@
+UniversalGroup source adaptations for SmallGroups
+Upstream: https://github.com/32805433/Universal-Group.git
+Revision: 6416dd36ad22f3684583457f234519bafc851396
+Scope: Rename all 180 retained modules under SmallPresentation and update local imports,
+including the documented toolchain and shared-API integration edits.
+Unselected upstream files and SmallGroups build configuration are outside this patch.
+Apply from a pristine upstream checkout at this revision using:
+  git apply /path/to/SmallGroups/provenance/UniversalGroup.patch
+
+diff --git a/UniversalGroup.lean b/SmallPresentation/UniversalGroup.lean
+rename from UniversalGroup.lean
+rename to SmallPresentation/UniversalGroup.lean
+--- a/UniversalGroup.lean
++++ b/SmallPresentation/UniversalGroup.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Embedding.Universality
++public import SmallPresentation.UniversalGroup.Embedding.Universality
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Coding/BooneCollins/Boundary.lean b/SmallPresentation/UniversalGroup/Coding/BooneCollins/Boundary.lean
+rename from UniversalGroup/Coding/BooneCollins/Boundary.lean
+rename to SmallPresentation/UniversalGroup/Coding/BooneCollins/Boundary.lean
+--- a/UniversalGroup/Coding/BooneCollins/Boundary.lean
++++ b/SmallPresentation/UniversalGroup/Coding/BooneCollins/Boundary.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Coding.BooneCollins.Words
+-public import UniversalGroup.Coding.Thue.BinaryStage
++public import SmallPresentation.UniversalGroup.Coding.BooneCollins.Words
++public import SmallPresentation.UniversalGroup.Coding.Thue.BinaryStage
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Coding/BooneCollins/Compiler.lean b/SmallPresentation/UniversalGroup/Coding/BooneCollins/Compiler.lean
+rename from UniversalGroup/Coding/BooneCollins/Compiler.lean
+rename to SmallPresentation/UniversalGroup/Coding/BooneCollins/Compiler.lean
+--- a/UniversalGroup/Coding/BooneCollins/Compiler.lean
++++ b/SmallPresentation/UniversalGroup/Coding/BooneCollins/Compiler.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Coding.BooneCollins.Reflection
++public import SmallPresentation.UniversalGroup.Coding.BooneCollins.Reflection
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Coding/BooneCollins/Decoder.lean b/SmallPresentation/UniversalGroup/Coding/BooneCollins/Decoder.lean
+rename from UniversalGroup/Coding/BooneCollins/Decoder.lean
+rename to SmallPresentation/UniversalGroup/Coding/BooneCollins/Decoder.lean
+--- a/UniversalGroup/Coding/BooneCollins/Decoder.lean
++++ b/SmallPresentation/UniversalGroup/Coding/BooneCollins/Decoder.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Coding.BooneCollins.Words
+-public import UniversalGroup.Coding.Thue.PriorityStage
++public import SmallPresentation.UniversalGroup.Coding.BooneCollins.Words
++public import SmallPresentation.UniversalGroup.Coding.Thue.PriorityStage
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Coding/BooneCollins/Forward.lean b/SmallPresentation/UniversalGroup/Coding/BooneCollins/Forward.lean
+rename from UniversalGroup/Coding/BooneCollins/Forward.lean
+rename to SmallPresentation/UniversalGroup/Coding/BooneCollins/Forward.lean
+--- a/UniversalGroup/Coding/BooneCollins/Forward.lean
++++ b/SmallPresentation/UniversalGroup/Coding/BooneCollins/Forward.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Coding.BooneCollins.Compiler
+-public import UniversalGroup.Coding.Thue.PriorityForward
++public import SmallPresentation.UniversalGroup.Coding.BooneCollins.Compiler
++public import SmallPresentation.UniversalGroup.Coding.Thue.PriorityForward
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Coding/BooneCollins/Long.lean b/SmallPresentation/UniversalGroup/Coding/BooneCollins/Long.lean
+rename from UniversalGroup/Coding/BooneCollins/Long.lean
+rename to SmallPresentation/UniversalGroup/Coding/BooneCollins/Long.lean
+--- a/UniversalGroup/Coding/BooneCollins/Long.lean
++++ b/SmallPresentation/UniversalGroup/Coding/BooneCollins/Long.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Coding.BooneCollins.Compiler
+-public import UniversalGroup.Coding.BooneCollins.Transpose
++public import SmallPresentation.UniversalGroup.Coding.BooneCollins.Compiler
++public import SmallPresentation.UniversalGroup.Coding.BooneCollins.Transpose
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Coding/BooneCollins/NormalForm.lean b/SmallPresentation/UniversalGroup/Coding/BooneCollins/NormalForm.lean
+rename from UniversalGroup/Coding/BooneCollins/NormalForm.lean
+rename to SmallPresentation/UniversalGroup/Coding/BooneCollins/NormalForm.lean
+--- a/UniversalGroup/Coding/BooneCollins/NormalForm.lean
++++ b/SmallPresentation/UniversalGroup/Coding/BooneCollins/NormalForm.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Coding.BooneCollins.Boundary
+-public import UniversalGroup.Coding.BooneCollins.Decoder
++public import SmallPresentation.UniversalGroup.Coding.BooneCollins.Boundary
++public import SmallPresentation.UniversalGroup.Coding.BooneCollins.Decoder
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Coding/BooneCollins/Reflection.lean b/SmallPresentation/UniversalGroup/Coding/BooneCollins/Reflection.lean
+rename from UniversalGroup/Coding/BooneCollins/Reflection.lean
+rename to SmallPresentation/UniversalGroup/Coding/BooneCollins/Reflection.lean
+--- a/UniversalGroup/Coding/BooneCollins/Reflection.lean
++++ b/SmallPresentation/UniversalGroup/Coding/BooneCollins/Reflection.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Coding.BooneCollins.NormalForm
+-public import UniversalGroup.Coding.Thue.PriorityReflection
++public import SmallPresentation.UniversalGroup.Coding.BooneCollins.NormalForm
++public import SmallPresentation.UniversalGroup.Coding.Thue.PriorityReflection
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Coding/BooneCollins/Rules.lean b/SmallPresentation/UniversalGroup/Coding/BooneCollins/Rules.lean
+rename from UniversalGroup/Coding/BooneCollins/Rules.lean
+rename to SmallPresentation/UniversalGroup/Coding/BooneCollins/Rules.lean
+--- a/UniversalGroup/Coding/BooneCollins/Rules.lean
++++ b/SmallPresentation/UniversalGroup/Coding/BooneCollins/Rules.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Coding.BooneCollins.Compiler
++public import SmallPresentation.UniversalGroup.Coding.BooneCollins.Compiler
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Coding/BooneCollins/Theorem.lean b/SmallPresentation/UniversalGroup/Coding/BooneCollins/Theorem.lean
+rename from UniversalGroup/Coding/BooneCollins/Theorem.lean
+rename to SmallPresentation/UniversalGroup/Coding/BooneCollins/Theorem.lean
+--- a/UniversalGroup/Coding/BooneCollins/Theorem.lean
++++ b/SmallPresentation/UniversalGroup/Coding/BooneCollins/Theorem.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Coding.BooneCollins.Long
+-public import UniversalGroup.Coding.BooneCollins.Forward
++public import SmallPresentation.UniversalGroup.Coding.BooneCollins.Long
++public import SmallPresentation.UniversalGroup.Coding.BooneCollins.Forward
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Coding/BooneCollins/Transpose.lean b/SmallPresentation/UniversalGroup/Coding/BooneCollins/Transpose.lean
+rename from UniversalGroup/Coding/BooneCollins/Transpose.lean
+rename to SmallPresentation/UniversalGroup/Coding/BooneCollins/Transpose.lean
+--- a/UniversalGroup/Coding/BooneCollins/Transpose.lean
++++ b/SmallPresentation/UniversalGroup/Coding/BooneCollins/Transpose.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Coding.BooneCollins.Boundary
+-public import UniversalGroup.Coding.Thue.RowSelection
++public import SmallPresentation.UniversalGroup.Coding.BooneCollins.Boundary
++public import SmallPresentation.UniversalGroup.Coding.Thue.RowSelection
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Coding/BooneCollins/Words.lean b/SmallPresentation/UniversalGroup/Coding/BooneCollins/Words.lean
+rename from UniversalGroup/Coding/BooneCollins/Words.lean
+rename to SmallPresentation/UniversalGroup/Coding/BooneCollins/Words.lean
+--- a/UniversalGroup/Coding/BooneCollins/Words.lean
++++ b/SmallPresentation/UniversalGroup/Coding/BooneCollins/Words.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Coding.Data
++public import SmallPresentation.UniversalGroup.Coding.Data
+ public import Mathlib.Tactic.Positivity
+ public import Mathlib.Tactic.FinCases
+ 
+diff --git a/UniversalGroup/Coding/Data.lean b/SmallPresentation/UniversalGroup/Coding/Data.lean
+rename from UniversalGroup/Coding/Data.lean
+rename to SmallPresentation/UniversalGroup/Coding/Data.lean
+--- a/UniversalGroup/Coding/Data.lean
++++ b/SmallPresentation/UniversalGroup/Coding/Data.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Host.Words
++public import SmallPresentation.UniversalGroup.Host.Words
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Coding/FiniteSource.lean b/SmallPresentation/UniversalGroup/Coding/FiniteSource.lean
+rename from UniversalGroup/Coding/FiniteSource.lean
+rename to SmallPresentation/UniversalGroup/Coding/FiniteSource.lean
+--- a/UniversalGroup/Coding/FiniteSource.lean
++++ b/SmallPresentation/UniversalGroup/Coding/FiniteSource.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Coding.Triangular
++public import SmallPresentation.UniversalGroup.Coding.Triangular
+ public import Mathlib.Logic.Equiv.Fin.Basic
+ public import Mathlib.Data.Fintype.Sum
+ public import Mathlib.Data.Fintype.Prod
+diff --git a/UniversalGroup/Coding/SourceMarker.lean b/SmallPresentation/UniversalGroup/Coding/SourceMarker.lean
+rename from UniversalGroup/Coding/SourceMarker.lean
+rename to SmallPresentation/UniversalGroup/Coding/SourceMarker.lean
+--- a/UniversalGroup/Coding/SourceMarker.lean
++++ b/SmallPresentation/UniversalGroup/Coding/SourceMarker.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Coding.Data
+-public import UniversalGroup.Coding.Thue.Core
++public import SmallPresentation.UniversalGroup.Coding.Data
++public import SmallPresentation.UniversalGroup.Coding.Thue.Core
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Coding/Thue/BinaryStage.lean b/SmallPresentation/UniversalGroup/Coding/Thue/BinaryStage.lean
+rename from UniversalGroup/Coding/Thue/BinaryStage.lean
+rename to SmallPresentation/UniversalGroup/Coding/Thue/BinaryStage.lean
+--- a/UniversalGroup/Coding/Thue/BinaryStage.lean
++++ b/SmallPresentation/UniversalGroup/Coding/Thue/BinaryStage.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Coding.Thue.Core
++public import SmallPresentation.UniversalGroup.Coding.Thue.Core
+ public import Mathlib.Data.List.Chain
+ public import Mathlib.Algebra.NeZero
+ public import Mathlib.Algebra.Ring.Nat
+diff --git a/UniversalGroup/Coding/Thue/ContextualSelection.lean b/SmallPresentation/UniversalGroup/Coding/Thue/ContextualSelection.lean
+rename from UniversalGroup/Coding/Thue/ContextualSelection.lean
+rename to SmallPresentation/UniversalGroup/Coding/Thue/ContextualSelection.lean
+--- a/UniversalGroup/Coding/Thue/ContextualSelection.lean
++++ b/SmallPresentation/UniversalGroup/Coding/Thue/ContextualSelection.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Coding.Thue.RowSelection
++public import SmallPresentation.UniversalGroup.Coding.Thue.RowSelection
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Coding/Thue/Core.lean b/SmallPresentation/UniversalGroup/Coding/Thue/Core.lean
+similarity index 100%
+rename from UniversalGroup/Coding/Thue/Core.lean
+rename to SmallPresentation/UniversalGroup/Coding/Thue/Core.lean
+diff --git a/UniversalGroup/Coding/Thue/FinalStage.lean b/SmallPresentation/UniversalGroup/Coding/Thue/FinalStage.lean
+rename from UniversalGroup/Coding/Thue/FinalStage.lean
+rename to SmallPresentation/UniversalGroup/Coding/Thue/FinalStage.lean
+--- a/UniversalGroup/Coding/Thue/FinalStage.lean
++++ b/SmallPresentation/UniversalGroup/Coding/Thue/FinalStage.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Coding.Thue.Core
++public import SmallPresentation.UniversalGroup.Coding.Thue.Core
+ public import Mathlib.Tactic.FinCases
+ public import Mathlib.Algebra.Ring.Nat
+ public import Mathlib.Data.Fintype.Basic
+diff --git a/UniversalGroup/Coding/Thue/PriorityForward.lean b/SmallPresentation/UniversalGroup/Coding/Thue/PriorityForward.lean
+rename from UniversalGroup/Coding/Thue/PriorityForward.lean
+rename to SmallPresentation/UniversalGroup/Coding/Thue/PriorityForward.lean
+--- a/UniversalGroup/Coding/Thue/PriorityForward.lean
++++ b/SmallPresentation/UniversalGroup/Coding/Thue/PriorityForward.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Coding.Thue.RowSelection
++public import SmallPresentation.UniversalGroup.Coding.Thue.RowSelection
+ 
+ @[expose] public section
+ 
+@@ -109,7 +109,6 @@
+     rw [hrow] at h
+     convert h using 1
+     simp [encodeWith, liftBinary_append, liftBit, liftBinary_nil, List.append_assoc]
+-    try rfl
+   have hrightDer : FirstEq
+       (List.replicate u e ++ liftBinary rightBlock)
+       (encodeWith u marker (rightRows j ++ right)) := by
+@@ -123,7 +122,6 @@
+     rw [hrow] at h
+     convert h using 1
+     simp [encodeWith, liftBinary_append, liftBit, liftBinary_nil, List.append_assoc]
+-    try rfl
+   have hlong : ThueEq (stage₂System (liftBinary (transpose p leftRows)) (liftBinary (transpose q rightRows)))
+       (List.replicate u e ++ liftBinary leftBlock)
+       (List.replicate u e ++ liftBinary rightBlock) := by
+diff --git a/UniversalGroup/Coding/Thue/PriorityReflection.lean b/SmallPresentation/UniversalGroup/Coding/Thue/PriorityReflection.lean
+rename from UniversalGroup/Coding/Thue/PriorityReflection.lean
+rename to SmallPresentation/UniversalGroup/Coding/Thue/PriorityReflection.lean
+--- a/UniversalGroup/Coding/Thue/PriorityReflection.lean
++++ b/SmallPresentation/UniversalGroup/Coding/Thue/PriorityReflection.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Coding.Thue.ContextualSelection
++public import SmallPresentation.UniversalGroup.Coding.Thue.ContextualSelection
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Coding/Thue/PriorityStage.lean b/SmallPresentation/UniversalGroup/Coding/Thue/PriorityStage.lean
+rename from UniversalGroup/Coding/Thue/PriorityStage.lean
+rename to SmallPresentation/UniversalGroup/Coding/Thue/PriorityStage.lean
+--- a/UniversalGroup/Coding/Thue/PriorityStage.lean
++++ b/SmallPresentation/UniversalGroup/Coding/Thue/PriorityStage.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Coding.Thue.FinalStage
++public import SmallPresentation.UniversalGroup.Coding.Thue.FinalStage
+ public import Mathlib.Algebra.Order.Group.Nat
+ public import Mathlib.Algebra.Order.Monoid.NatCast
+ 
+diff --git a/UniversalGroup/Coding/Thue/RowSelection.lean b/SmallPresentation/UniversalGroup/Coding/Thue/RowSelection.lean
+rename from UniversalGroup/Coding/Thue/RowSelection.lean
+rename to SmallPresentation/UniversalGroup/Coding/Thue/RowSelection.lean
+--- a/UniversalGroup/Coding/Thue/RowSelection.lean
++++ b/SmallPresentation/UniversalGroup/Coding/Thue/RowSelection.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Coding.Thue.PriorityStage
++public import SmallPresentation.UniversalGroup.Coding.Thue.PriorityStage
+ public import Mathlib.Algebra.Order.Ring.Nat
+ public import Mathlib.Data.List.GetD
+ 
+diff --git a/UniversalGroup/Coding/Triangular.lean b/SmallPresentation/UniversalGroup/Coding/Triangular.lean
+rename from UniversalGroup/Coding/Triangular.lean
+rename to SmallPresentation/UniversalGroup/Coding/Triangular.lean
+--- a/UniversalGroup/Coding/Triangular.lean
++++ b/SmallPresentation/UniversalGroup/Coding/Triangular.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Coding.SourceMarker
++public import SmallPresentation.UniversalGroup.Coding.SourceMarker
+ public import Mathlib.Algebra.GroupWithZero.Nat
+ public import Mathlib.Tactic.FinCases
+ 
+diff --git a/UniversalGroup/Coding/Valiev.lean b/SmallPresentation/UniversalGroup/Coding/Valiev.lean
+rename from UniversalGroup/Coding/Valiev.lean
+rename to SmallPresentation/UniversalGroup/Coding/Valiev.lean
+--- a/UniversalGroup/Coding/Valiev.lean
++++ b/SmallPresentation/UniversalGroup/Coding/Valiev.lean
+@@ -1,8 +1,8 @@
+ module
+ 
+-public import UniversalGroup.Coding.FiniteSource
+-public import UniversalGroup.Coding.BooneCollins.Theorem
+-public import UniversalGroup.Coding.BooneCollins.Rules
++public import SmallPresentation.UniversalGroup.Coding.FiniteSource
++public import SmallPresentation.UniversalGroup.Coding.BooneCollins.Theorem
++public import SmallPresentation.UniversalGroup.Coding.BooneCollins.Rules
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Computability/Enumerable.lean b/SmallPresentation/UniversalGroup/Computability/Enumerable.lean
+similarity index 100%
+rename from UniversalGroup/Computability/Enumerable.lean
+rename to SmallPresentation/UniversalGroup/Computability/Enumerable.lean
+diff --git a/UniversalGroup/Computability/Generators.lean b/SmallPresentation/UniversalGroup/Computability/Generators.lean
+rename from UniversalGroup/Computability/Generators.lean
+rename to SmallPresentation/UniversalGroup/Computability/Generators.lean
+--- a/UniversalGroup/Computability/Generators.lean
++++ b/SmallPresentation/UniversalGroup/Computability/Generators.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Computability.WordProblem
++public import SmallPresentation.UniversalGroup.Computability.WordProblem
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Computability/Machine/PartialRecursiveMachine.lean b/SmallPresentation/UniversalGroup/Computability/Machine/PartialRecursiveMachine.lean
+similarity index 100%
+rename from UniversalGroup/Computability/Machine/PartialRecursiveMachine.lean
+rename to SmallPresentation/UniversalGroup/Computability/Machine/PartialRecursiveMachine.lean
+diff --git a/UniversalGroup/Computability/Machine/PostMachineThue.lean b/SmallPresentation/UniversalGroup/Computability/Machine/PostMachineThue.lean
+rename from UniversalGroup/Computability/Machine/PostMachineThue.lean
+rename to SmallPresentation/UniversalGroup/Computability/Machine/PostMachineThue.lean
+--- a/UniversalGroup/Computability/Machine/PostMachineThue.lean
++++ b/SmallPresentation/UniversalGroup/Computability/Machine/PostMachineThue.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Computability.Machine.ThueBridge
++public import SmallPresentation.UniversalGroup.Computability.Machine.ThueBridge
+ public import Mathlib.Basic.Finite.Sum
+ public import Mathlib.Basic.Finite.Prod
+ public import Mathlib.Data.Set.Finite.Lattice
+diff --git a/UniversalGroup/Computability/Machine/SupportedTM1Thue.lean b/SmallPresentation/UniversalGroup/Computability/Machine/SupportedTM1Thue.lean
+rename from UniversalGroup/Computability/Machine/SupportedTM1Thue.lean
+rename to SmallPresentation/UniversalGroup/Computability/Machine/SupportedTM1Thue.lean
+--- a/UniversalGroup/Computability/Machine/SupportedTM1Thue.lean
++++ b/SmallPresentation/UniversalGroup/Computability/Machine/SupportedTM1Thue.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Computability.Machine.TM1BinaryAdapter
+-public import UniversalGroup.Computability.Machine.TM0PostAdapter
++public import SmallPresentation.UniversalGroup.Computability.Machine.TM1BinaryAdapter
++public import SmallPresentation.UniversalGroup.Computability.Machine.TM0PostAdapter
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Computability/Machine/TM0PostAdapter.lean b/SmallPresentation/UniversalGroup/Computability/Machine/TM0PostAdapter.lean
+rename from UniversalGroup/Computability/Machine/TM0PostAdapter.lean
+rename to SmallPresentation/UniversalGroup/Computability/Machine/TM0PostAdapter.lean
+--- a/UniversalGroup/Computability/Machine/TM0PostAdapter.lean
++++ b/SmallPresentation/UniversalGroup/Computability/Machine/TM0PostAdapter.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Computability.Machine.PostMachineThue
++public import SmallPresentation.UniversalGroup.Computability.Machine.PostMachineThue
+ public import Mathlib.Computability.TuringMachine.PostTuringMachine
+ 
+ @[expose] public section
+diff --git a/UniversalGroup/Computability/Machine/TM1BinaryAdapter.lean b/SmallPresentation/UniversalGroup/Computability/Machine/TM1BinaryAdapter.lean
+similarity index 100%
+rename from UniversalGroup/Computability/Machine/TM1BinaryAdapter.lean
+rename to SmallPresentation/UniversalGroup/Computability/Machine/TM1BinaryAdapter.lean
+diff --git a/UniversalGroup/Computability/Machine/ThueBridge.lean b/SmallPresentation/UniversalGroup/Computability/Machine/ThueBridge.lean
+rename from UniversalGroup/Computability/Machine/ThueBridge.lean
+rename to SmallPresentation/UniversalGroup/Computability/Machine/ThueBridge.lean
+--- a/UniversalGroup/Computability/Machine/ThueBridge.lean
++++ b/SmallPresentation/UniversalGroup/Computability/Machine/ThueBridge.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Coding.Thue.Core
++public import SmallPresentation.UniversalGroup.Coding.Thue.Core
+ public import Mathlib.Computability.StateTransition
+ 
+ @[expose] public section
+diff --git a/UniversalGroup/Computability/WordProblem.lean b/SmallPresentation/UniversalGroup/Computability/WordProblem.lean
+rename from UniversalGroup/Computability/WordProblem.lean
+rename to SmallPresentation/UniversalGroup/Computability/WordProblem.lean
+--- a/UniversalGroup/Computability/WordProblem.lean
++++ b/SmallPresentation/UniversalGroup/Computability/WordProblem.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Higman.Enumeration
+-public import UniversalGroup.Computability.Words
++public import SmallPresentation.UniversalGroup.Higman.Enumeration
++public import SmallPresentation.UniversalGroup.Computability.Words
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Computability/Words.lean b/SmallPresentation/UniversalGroup/Computability/Words.lean
+rename from UniversalGroup/Computability/Words.lean
+rename to SmallPresentation/UniversalGroup/Computability/Words.lean
+--- a/UniversalGroup/Computability/Words.lean
++++ b/SmallPresentation/UniversalGroup/Computability/Words.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Computability.Enumerable
++public import SmallPresentation.UniversalGroup.Computability.Enumerable
+ public import Mathlib.GroupTheory.FreeGroup.Reduce
+ 
+ @[expose] public section
+diff --git a/UniversalGroup/Embedding/AttachingMaps.lean b/SmallPresentation/UniversalGroup/Embedding/AttachingMaps.lean
+rename from UniversalGroup/Embedding/AttachingMaps.lean
+rename to SmallPresentation/UniversalGroup/Embedding/AttachingMaps.lean
+--- a/UniversalGroup/Embedding/AttachingMaps.lean
++++ b/SmallPresentation/UniversalGroup/Embedding/AttachingMaps.lean
+@@ -1,8 +1,8 @@
+ module
+ 
+-public import UniversalGroup.Embedding.PositiveHost.InputEmbedding
+-public import UniversalGroup.Embedding.PositiveHost.Source
+-public import UniversalGroup.Embedding.PositiveHost.Target
++public import SmallPresentation.UniversalGroup.Embedding.PositiveHost.InputEmbedding
++public import SmallPresentation.UniversalGroup.Embedding.PositiveHost.Source
++public import SmallPresentation.UniversalGroup.Embedding.PositiveHost.Target
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Embedding/CompressionIdentities.lean b/SmallPresentation/UniversalGroup/Embedding/CompressionIdentities.lean
+rename from UniversalGroup/Embedding/CompressionIdentities.lean
+rename to SmallPresentation/UniversalGroup/Embedding/CompressionIdentities.lean
+--- a/UniversalGroup/Embedding/CompressionIdentities.lean
++++ b/SmallPresentation/UniversalGroup/Embedding/CompressionIdentities.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Foundations.Conjugation
++public import SmallPresentation.UniversalGroup.Foundations.Conjugation
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Embedding/FactorSwap.lean b/SmallPresentation/UniversalGroup/Embedding/FactorSwap.lean
+rename from UniversalGroup/Embedding/FactorSwap.lean
+rename to SmallPresentation/UniversalGroup/Embedding/FactorSwap.lean
+--- a/UniversalGroup/Embedding/FactorSwap.lean
++++ b/SmallPresentation/UniversalGroup/Embedding/FactorSwap.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Embedding.Presentations
+-public import UniversalGroup.Foundations.HNN.Identifying
++public import SmallPresentation.UniversalGroup.Embedding.Presentations
++public import SmallPresentation.UniversalGroup.Foundations.HNN.Identifying
+ public import Mathlib.Tactic.FinCases
+ 
+ @[expose] public section
+diff --git a/UniversalGroup/Embedding/PositiveHost/CoreSymmetry.lean b/SmallPresentation/UniversalGroup/Embedding/PositiveHost/CoreSymmetry.lean
+rename from UniversalGroup/Embedding/PositiveHost/CoreSymmetry.lean
+rename to SmallPresentation/UniversalGroup/Embedding/PositiveHost/CoreSymmetry.lean
+--- a/UniversalGroup/Embedding/PositiveHost/CoreSymmetry.lean
++++ b/SmallPresentation/UniversalGroup/Embedding/PositiveHost/CoreSymmetry.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Core.IntersectionsTransport
++public import SmallPresentation.UniversalGroup.Simulator.Core.IntersectionsTransport
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Embedding/PositiveHost/HGrid.lean b/SmallPresentation/UniversalGroup/Embedding/PositiveHost/HGrid.lean
+rename from UniversalGroup/Embedding/PositiveHost/HGrid.lean
+rename to SmallPresentation/UniversalGroup/Embedding/PositiveHost/HGrid.lean
+--- a/UniversalGroup/Embedding/PositiveHost/HGrid.lean
++++ b/SmallPresentation/UniversalGroup/Embedding/PositiveHost/HGrid.lean
+@@ -1,8 +1,8 @@
+ module
+ 
+-public import UniversalGroup.Embedding.PositiveHost.HStageGrid
+-public import UniversalGroup.Foundations.HNN.ProductGridHNN
+-public import UniversalGroup.Foundations.HNN.Map
++public import SmallPresentation.UniversalGroup.Embedding.PositiveHost.HStageGrid
++public import SmallPresentation.UniversalGroup.Foundations.HNN.ProductGridHNN
++public import SmallPresentation.UniversalGroup.Foundations.HNN.Map
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Embedding/PositiveHost/HStage.lean b/SmallPresentation/UniversalGroup/Embedding/PositiveHost/HStage.lean
+rename from UniversalGroup/Embedding/PositiveHost/HStage.lean
+rename to SmallPresentation/UniversalGroup/Embedding/PositiveHost/HStage.lean
+--- a/UniversalGroup/Embedding/PositiveHost/HStage.lean
++++ b/SmallPresentation/UniversalGroup/Embedding/PositiveHost/HStage.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Embedding.PositiveHost.Symmetry
+-public import UniversalGroup.Host.SymmetrySubgroups
++public import SmallPresentation.UniversalGroup.Embedding.PositiveHost.Symmetry
++public import SmallPresentation.UniversalGroup.Host.SymmetrySubgroups
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Embedding/PositiveHost/HStageGrid.lean b/SmallPresentation/UniversalGroup/Embedding/PositiveHost/HStageGrid.lean
+rename from UniversalGroup/Embedding/PositiveHost/HStageGrid.lean
+rename to SmallPresentation/UniversalGroup/Embedding/PositiveHost/HStageGrid.lean
+--- a/UniversalGroup/Embedding/PositiveHost/HStageGrid.lean
++++ b/SmallPresentation/UniversalGroup/Embedding/PositiveHost/HStageGrid.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Embedding.PositiveHost.HStage
+-public import UniversalGroup.Host.SymmetryGrid
++public import SmallPresentation.UniversalGroup.Embedding.PositiveHost.HStage
++public import SmallPresentation.UniversalGroup.Host.SymmetryGrid
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Embedding/PositiveHost/InputEmbedding.lean b/SmallPresentation/UniversalGroup/Embedding/PositiveHost/InputEmbedding.lean
+rename from UniversalGroup/Embedding/PositiveHost/InputEmbedding.lean
+rename to SmallPresentation/UniversalGroup/Embedding/PositiveHost/InputEmbedding.lean
+--- a/UniversalGroup/Embedding/PositiveHost/InputEmbedding.lean
++++ b/SmallPresentation/UniversalGroup/Embedding/PositiveHost/InputEmbedding.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Embedding.PositiveHost.InputRelators
+-public import UniversalGroup.Embedding.PositiveHost.ModelComparison
++public import SmallPresentation.UniversalGroup.Embedding.PositiveHost.InputRelators
++public import SmallPresentation.UniversalGroup.Embedding.PositiveHost.ModelComparison
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Embedding/PositiveHost/InputRelators.lean b/SmallPresentation/UniversalGroup/Embedding/PositiveHost/InputRelators.lean
+rename from UniversalGroup/Embedding/PositiveHost/InputRelators.lean
+rename to SmallPresentation/UniversalGroup/Embedding/PositiveHost/InputRelators.lean
+--- a/UniversalGroup/Embedding/PositiveHost/InputRelators.lean
++++ b/SmallPresentation/UniversalGroup/Embedding/PositiveHost/InputRelators.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Embedding.PositiveHost.Recovery
+-public import UniversalGroup.Host.PositiveEvaluation
++public import SmallPresentation.UniversalGroup.Embedding.PositiveHost.Recovery
++public import SmallPresentation.UniversalGroup.Host.PositiveEvaluation
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Embedding/PositiveHost/Model.lean b/SmallPresentation/UniversalGroup/Embedding/PositiveHost/Model.lean
+rename from UniversalGroup/Embedding/PositiveHost/Model.lean
+rename to SmallPresentation/UniversalGroup/Embedding/PositiveHost/Model.lean
+--- a/UniversalGroup/Embedding/PositiveHost/Model.lean
++++ b/SmallPresentation/UniversalGroup/Embedding/PositiveHost/Model.lean
+@@ -1,8 +1,8 @@
+ module
+ 
+-public import UniversalGroup.Embedding.PositiveHost.HGrid
+-public import UniversalGroup.Host.AStage
+-public import UniversalGroup.Host.BStage
++public import SmallPresentation.UniversalGroup.Embedding.PositiveHost.HGrid
++public import SmallPresentation.UniversalGroup.Host.AStage
++public import SmallPresentation.UniversalGroup.Host.BStage
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Embedding/PositiveHost/ModelComparison.lean b/SmallPresentation/UniversalGroup/Embedding/PositiveHost/ModelComparison.lean
+rename from UniversalGroup/Embedding/PositiveHost/ModelComparison.lean
+rename to SmallPresentation/UniversalGroup/Embedding/PositiveHost/ModelComparison.lean
+--- a/UniversalGroup/Embedding/PositiveHost/ModelComparison.lean
++++ b/SmallPresentation/UniversalGroup/Embedding/PositiveHost/ModelComparison.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Embedding.PositiveHost.Model
+-public import UniversalGroup.Embedding.PositiveHost.ModelLaws
++public import SmallPresentation.UniversalGroup.Embedding.PositiveHost.Model
++public import SmallPresentation.UniversalGroup.Embedding.PositiveHost.ModelLaws
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Embedding/PositiveHost/ModelLaws.lean b/SmallPresentation/UniversalGroup/Embedding/PositiveHost/ModelLaws.lean
+rename from UniversalGroup/Embedding/PositiveHost/ModelLaws.lean
+rename to SmallPresentation/UniversalGroup/Embedding/PositiveHost/ModelLaws.lean
+--- a/UniversalGroup/Embedding/PositiveHost/ModelLaws.lean
++++ b/SmallPresentation/UniversalGroup/Embedding/PositiveHost/ModelLaws.lean
+@@ -1,8 +1,8 @@
+ module
+ 
+-public import UniversalGroup.Embedding.Presentations
+-public import UniversalGroup.Simulator.Centralizer
+-public import UniversalGroup.Simulator.Relations
++public import SmallPresentation.UniversalGroup.Embedding.Presentations
++public import SmallPresentation.UniversalGroup.Simulator.Centralizer
++public import SmallPresentation.UniversalGroup.Simulator.Relations
+ public import Mathlib.Algebra.Group.Commute.Hom
+ 
+ @[expose] public section
+diff --git a/UniversalGroup/Embedding/PositiveHost/Recovery.lean b/SmallPresentation/UniversalGroup/Embedding/PositiveHost/Recovery.lean
+rename from UniversalGroup/Embedding/PositiveHost/Recovery.lean
+rename to SmallPresentation/UniversalGroup/Embedding/PositiveHost/Recovery.lean
+--- a/UniversalGroup/Embedding/PositiveHost/Recovery.lean
++++ b/SmallPresentation/UniversalGroup/Embedding/PositiveHost/Recovery.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Data
+-public import UniversalGroup.Embedding.Presentations
++public import SmallPresentation.UniversalGroup.Simulator.Data
++public import SmallPresentation.UniversalGroup.Embedding.Presentations
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Embedding/PositiveHost/Source.lean b/SmallPresentation/UniversalGroup/Embedding/PositiveHost/Source.lean
+rename from UniversalGroup/Embedding/PositiveHost/Source.lean
+rename to SmallPresentation/UniversalGroup/Embedding/PositiveHost/Source.lean
+--- a/UniversalGroup/Embedding/PositiveHost/Source.lean
++++ b/SmallPresentation/UniversalGroup/Embedding/PositiveHost/Source.lean
+@@ -1,8 +1,8 @@
+ module
+ 
+-public import UniversalGroup.Embedding.PositiveHost.SourceQuotient
+-public import UniversalGroup.Embedding.PositiveHost.ModelComparison
+-public import UniversalGroup.Simulator.Subgroups
++public import SmallPresentation.UniversalGroup.Embedding.PositiveHost.SourceQuotient
++public import SmallPresentation.UniversalGroup.Embedding.PositiveHost.ModelComparison
++public import SmallPresentation.UniversalGroup.Simulator.Subgroups
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Embedding/PositiveHost/SourceFree.lean b/SmallPresentation/UniversalGroup/Embedding/PositiveHost/SourceFree.lean
+rename from UniversalGroup/Embedding/PositiveHost/SourceFree.lean
+rename to SmallPresentation/UniversalGroup/Embedding/PositiveHost/SourceFree.lean
+--- a/UniversalGroup/Embedding/PositiveHost/SourceFree.lean
++++ b/SmallPresentation/UniversalGroup/Embedding/PositiveHost/SourceFree.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Foundations.HNN.CentralizerMap
+-public import UniversalGroup.Preparation.FreeProduct
++public import SmallPresentation.UniversalGroup.Foundations.HNN.CentralizerMap
++public import SmallPresentation.UniversalGroup.Preparation.FreeProduct
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Embedding/PositiveHost/SourceQuotient.lean b/SmallPresentation/UniversalGroup/Embedding/PositiveHost/SourceQuotient.lean
+rename from UniversalGroup/Embedding/PositiveHost/SourceQuotient.lean
+rename to SmallPresentation/UniversalGroup/Embedding/PositiveHost/SourceQuotient.lean
+--- a/UniversalGroup/Embedding/PositiveHost/SourceQuotient.lean
++++ b/SmallPresentation/UniversalGroup/Embedding/PositiveHost/SourceQuotient.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Embedding.PositiveHost.SourceFree
+-public import UniversalGroup.Embedding.PositiveHost.HStage
++public import SmallPresentation.UniversalGroup.Embedding.PositiveHost.SourceFree
++public import SmallPresentation.UniversalGroup.Embedding.PositiveHost.HStage
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Embedding/PositiveHost/Symmetry.lean b/SmallPresentation/UniversalGroup/Embedding/PositiveHost/Symmetry.lean
+rename from UniversalGroup/Embedding/PositiveHost/Symmetry.lean
+rename to SmallPresentation/UniversalGroup/Embedding/PositiveHost/Symmetry.lean
+--- a/UniversalGroup/Embedding/PositiveHost/Symmetry.lean
++++ b/SmallPresentation/UniversalGroup/Embedding/PositiveHost/Symmetry.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Embedding.PositiveHost.CoreSymmetry
+-public import UniversalGroup.Simulator.Symmetry.CodeIntersections
++public import SmallPresentation.UniversalGroup.Embedding.PositiveHost.CoreSymmetry
++public import SmallPresentation.UniversalGroup.Simulator.Symmetry.CodeIntersections
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Embedding/PositiveHost/Target.lean b/SmallPresentation/UniversalGroup/Embedding/PositiveHost/Target.lean
+rename from UniversalGroup/Embedding/PositiveHost/Target.lean
+rename to SmallPresentation/UniversalGroup/Embedding/PositiveHost/Target.lean
+--- a/UniversalGroup/Embedding/PositiveHost/Target.lean
++++ b/SmallPresentation/UniversalGroup/Embedding/PositiveHost/Target.lean
+@@ -1,8 +1,8 @@
+ module
+ 
+-public import UniversalGroup.Embedding.ProtectedInput.RowProduct
+-public import UniversalGroup.Embedding.PositiveHost.Model
+-public import UniversalGroup.Embedding.FactorSwap
++public import SmallPresentation.UniversalGroup.Embedding.ProtectedInput.RowProduct
++public import SmallPresentation.UniversalGroup.Embedding.PositiveHost.Model
++public import SmallPresentation.UniversalGroup.Embedding.FactorSwap
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Embedding/Presentations.lean b/SmallPresentation/UniversalGroup/Embedding/Presentations.lean
+rename from UniversalGroup/Embedding/Presentations.lean
+rename to SmallPresentation/UniversalGroup/Embedding/Presentations.lean
+--- a/UniversalGroup/Embedding/Presentations.lean
++++ b/SmallPresentation/UniversalGroup/Embedding/Presentations.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Host.Words
+-public import UniversalGroup.Embedding.CompressionIdentities
++public import SmallPresentation.UniversalGroup.Host.Words
++public import SmallPresentation.UniversalGroup.Embedding.CompressionIdentities
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Embedding/ProtectedInput.lean b/SmallPresentation/UniversalGroup/Embedding/ProtectedInput.lean
+rename from UniversalGroup/Embedding/ProtectedInput.lean
+rename to SmallPresentation/UniversalGroup/Embedding/ProtectedInput.lean
+--- a/UniversalGroup/Embedding/ProtectedInput.lean
++++ b/SmallPresentation/UniversalGroup/Embedding/ProtectedInput.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Coding.Data
++public import SmallPresentation.UniversalGroup.Coding.Data
+ public import Mathlib.Tactic.FinCases
+ 
+ @[expose] public section
+diff --git a/UniversalGroup/Embedding/ProtectedInput/MarkedQuotient.lean b/SmallPresentation/UniversalGroup/Embedding/ProtectedInput/MarkedQuotient.lean
+rename from UniversalGroup/Embedding/ProtectedInput/MarkedQuotient.lean
+rename to SmallPresentation/UniversalGroup/Embedding/ProtectedInput/MarkedQuotient.lean
+--- a/UniversalGroup/Embedding/ProtectedInput/MarkedQuotient.lean
++++ b/SmallPresentation/UniversalGroup/Embedding/ProtectedInput/MarkedQuotient.lean
+@@ -1,8 +1,8 @@
+ module
+ 
+-public import UniversalGroup.Preparation.ReflectionInput
+-public import UniversalGroup.Foundations.FinitePresentation.Generators
+-public import UniversalGroup.Preparation.Positive
++public import SmallPresentation.UniversalGroup.Preparation.ReflectionInput
++public import SmallPresentation.UniversalGroup.Foundations.FinitePresentation.Generators
++public import SmallPresentation.UniversalGroup.Preparation.Positive
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Embedding/ProtectedInput/ProtectedAction.lean b/SmallPresentation/UniversalGroup/Embedding/ProtectedInput/ProtectedAction.lean
+rename from UniversalGroup/Embedding/ProtectedInput/ProtectedAction.lean
+rename to SmallPresentation/UniversalGroup/Embedding/ProtectedInput/ProtectedAction.lean
+--- a/UniversalGroup/Embedding/ProtectedInput/ProtectedAction.lean
++++ b/SmallPresentation/UniversalGroup/Embedding/ProtectedInput/ProtectedAction.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Foundations.HNN.Identifying
++public import SmallPresentation.UniversalGroup.Foundations.HNN.Identifying
+ public import Mathlib.Data.Fin.VecNotation
+ public import Mathlib.GroupTheory.FreeGroup.Basic
+ public import Mathlib.Tactic.FinCases
+diff --git a/UniversalGroup/Embedding/ProtectedInput/RowModel.lean b/SmallPresentation/UniversalGroup/Embedding/ProtectedInput/RowModel.lean
+rename from UniversalGroup/Embedding/ProtectedInput/RowModel.lean
+rename to SmallPresentation/UniversalGroup/Embedding/ProtectedInput/RowModel.lean
+--- a/UniversalGroup/Embedding/ProtectedInput/RowModel.lean
++++ b/SmallPresentation/UniversalGroup/Embedding/ProtectedInput/RowModel.lean
+@@ -1,8 +1,8 @@
+ module
+ 
+-public import UniversalGroup.Embedding.ProtectedInput
+-public import UniversalGroup.Host.InputTriples
+-public import UniversalGroup.Foundations.Conjugation
++public import SmallPresentation.UniversalGroup.Embedding.ProtectedInput
++public import SmallPresentation.UniversalGroup.Host.InputTriples
++public import SmallPresentation.UniversalGroup.Foundations.Conjugation
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Embedding/ProtectedInput/RowProduct.lean b/SmallPresentation/UniversalGroup/Embedding/ProtectedInput/RowProduct.lean
+rename from UniversalGroup/Embedding/ProtectedInput/RowProduct.lean
+rename to SmallPresentation/UniversalGroup/Embedding/ProtectedInput/RowProduct.lean
+--- a/UniversalGroup/Embedding/ProtectedInput/RowProduct.lean
++++ b/SmallPresentation/UniversalGroup/Embedding/ProtectedInput/RowProduct.lean
+@@ -1,8 +1,8 @@
+ module
+ 
+-public import UniversalGroup.Embedding.ProtectedInput.RowModel
+-public import UniversalGroup.Host.BStage
+-public import UniversalGroup.Foundations.HNN.Map
++public import SmallPresentation.UniversalGroup.Embedding.ProtectedInput.RowModel
++public import SmallPresentation.UniversalGroup.Host.BStage
++public import SmallPresentation.UniversalGroup.Foundations.HNN.Map
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Embedding/ProtectedInput/Theorem.lean b/SmallPresentation/UniversalGroup/Embedding/ProtectedInput/Theorem.lean
+rename from UniversalGroup/Embedding/ProtectedInput/Theorem.lean
+rename to SmallPresentation/UniversalGroup/Embedding/ProtectedInput/Theorem.lean
+--- a/UniversalGroup/Embedding/ProtectedInput/Theorem.lean
++++ b/SmallPresentation/UniversalGroup/Embedding/ProtectedInput/Theorem.lean
+@@ -1,8 +1,8 @@
+ module
+ 
+-public import UniversalGroup.Embedding.ProtectedInput
+-public import UniversalGroup.Embedding.ProtectedInput.MarkedQuotient
+-public import UniversalGroup.Embedding.ProtectedInput.ProtectedAction
++public import SmallPresentation.UniversalGroup.Embedding.ProtectedInput
++public import SmallPresentation.UniversalGroup.Embedding.ProtectedInput.MarkedQuotient
++public import SmallPresentation.UniversalGroup.Embedding.ProtectedInput.ProtectedAction
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Embedding/Universality.lean b/SmallPresentation/UniversalGroup/Embedding/Universality.lean
+rename from UniversalGroup/Embedding/Universality.lean
+rename to SmallPresentation/UniversalGroup/Embedding/Universality.lean
+--- a/UniversalGroup/Embedding/Universality.lean
++++ b/SmallPresentation/UniversalGroup/Embedding/Universality.lean
+@@ -1,10 +1,10 @@
+ module
+ 
+-public import UniversalGroup.Embedding.AttachingMaps
+-public import UniversalGroup.Embedding.ProtectedInput.Theorem
+-public import UniversalGroup.Coding.Valiev
+-public import UniversalGroup.Simulator.Intersections
+-public import UniversalGroup.Higman.Theorem
++public import SmallPresentation.UniversalGroup.Embedding.AttachingMaps
++public import SmallPresentation.UniversalGroup.Embedding.ProtectedInput.Theorem
++public import SmallPresentation.UniversalGroup.Coding.Valiev
++public import SmallPresentation.UniversalGroup.Simulator.Intersections
++public import SmallPresentation.UniversalGroup.Higman.Theorem
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Foundations/Amalgam/Centralizing.lean b/SmallPresentation/UniversalGroup/Foundations/Amalgam/Centralizing.lean
+similarity index 100%
+rename from UniversalGroup/Foundations/Amalgam/Centralizing.lean
+rename to SmallPresentation/UniversalGroup/Foundations/Amalgam/Centralizing.lean
+diff --git a/UniversalGroup/Foundations/Amalgam/Conjugated.lean b/SmallPresentation/UniversalGroup/Foundations/Amalgam/Conjugated.lean
+rename from UniversalGroup/Foundations/Amalgam/Conjugated.lean
+rename to SmallPresentation/UniversalGroup/Foundations/Amalgam/Conjugated.lean
+--- a/UniversalGroup/Foundations/Amalgam/Conjugated.lean
++++ b/SmallPresentation/UniversalGroup/Foundations/Amalgam/Conjugated.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Foundations.HNN.NormalForms
++public import SmallPresentation.UniversalGroup.Foundations.HNN.NormalForms
+ public import Mathlib.GroupTheory.PushoutI
+ public import Mathlib.Algebra.Group.Commute.Basic
+ 
+diff --git a/UniversalGroup/Foundations/Amalgam/Restriction.lean b/SmallPresentation/UniversalGroup/Foundations/Amalgam/Restriction.lean
+rename from UniversalGroup/Foundations/Amalgam/Restriction.lean
+rename to SmallPresentation/UniversalGroup/Foundations/Amalgam/Restriction.lean
+--- a/UniversalGroup/Foundations/Amalgam/Restriction.lean
++++ b/SmallPresentation/UniversalGroup/Foundations/Amalgam/Restriction.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Foundations.Amalgam.Centralizing
++public import SmallPresentation.UniversalGroup.Foundations.Amalgam.Centralizing
+ public import Mathlib.Algebra.Group.Subgroup.Finite
+ 
+ @[expose] public section
+diff --git a/UniversalGroup/Foundations/Conjugation.lean b/SmallPresentation/UniversalGroup/Foundations/Conjugation.lean
+similarity index 100%
+rename from UniversalGroup/Foundations/Conjugation.lean
+rename to SmallPresentation/UniversalGroup/Foundations/Conjugation.lean
+diff --git a/UniversalGroup/Foundations/Coproduct.lean b/SmallPresentation/UniversalGroup/Foundations/Coproduct.lean
+similarity index 100%
+rename from UniversalGroup/Foundations/Coproduct.lean
+rename to SmallPresentation/UniversalGroup/Foundations/Coproduct.lean
+diff --git a/UniversalGroup/Foundations/FinitePresentation/Extensions.lean b/SmallPresentation/UniversalGroup/Foundations/FinitePresentation/Extensions.lean
+rename from UniversalGroup/Foundations/FinitePresentation/Extensions.lean
+rename to SmallPresentation/UniversalGroup/Foundations/FinitePresentation/Extensions.lean
+--- a/UniversalGroup/Foundations/FinitePresentation/Extensions.lean
++++ b/SmallPresentation/UniversalGroup/Foundations/FinitePresentation/Extensions.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Foundations.HNN.Identifying
++public import SmallPresentation.UniversalGroup.Foundations.HNN.Identifying
+ public import Mathlib.GroupTheory.FinitelyPresentedGroup
+ public import Mathlib.GroupTheory.PushoutI
+ 
+diff --git a/UniversalGroup/Foundations/FinitePresentation/Generators.lean b/SmallPresentation/UniversalGroup/Foundations/FinitePresentation/Generators.lean
+rename from UniversalGroup/Foundations/FinitePresentation/Generators.lean
+rename to SmallPresentation/UniversalGroup/Foundations/FinitePresentation/Generators.lean
+--- a/UniversalGroup/Foundations/FinitePresentation/Generators.lean
++++ b/SmallPresentation/UniversalGroup/Foundations/FinitePresentation/Generators.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Foundations.Presentation
+-public import UniversalGroup.Foundations.FinitePresentation.Extensions
++public import SmallPresentation.UniversalGroup.Foundations.Presentation
++public import SmallPresentation.UniversalGroup.Foundations.FinitePresentation.Extensions
+ public import Mathlib.GroupTheory.FreeGroup.Reduce
+ 
+ @[expose] public section
+diff --git a/UniversalGroup/Foundations/FinitePresentation/Products.lean b/SmallPresentation/UniversalGroup/Foundations/FinitePresentation/Products.lean
+rename from UniversalGroup/Foundations/FinitePresentation/Products.lean
+rename to SmallPresentation/UniversalGroup/Foundations/FinitePresentation/Products.lean
+--- a/UniversalGroup/Foundations/FinitePresentation/Products.lean
++++ b/SmallPresentation/UniversalGroup/Foundations/FinitePresentation/Products.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Foundations.FinitePresentation.Extensions
++public import SmallPresentation.UniversalGroup.Foundations.FinitePresentation.Extensions
+ public import Mathlib.GroupTheory.NoncommCoprod
+ 
+ @[expose] public section
+diff --git a/UniversalGroup/Foundations/HNN/AdjoinFree.lean b/SmallPresentation/UniversalGroup/Foundations/HNN/AdjoinFree.lean
+rename from UniversalGroup/Foundations/HNN/AdjoinFree.lean
+rename to SmallPresentation/UniversalGroup/Foundations/HNN/AdjoinFree.lean
+--- a/UniversalGroup/Foundations/HNN/AdjoinFree.lean
++++ b/SmallPresentation/UniversalGroup/Foundations/HNN/AdjoinFree.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Foundations.HNN.NormalForms
+-public import UniversalGroup.Foundations.Presentation
++public import SmallPresentation.UniversalGroup.Foundations.HNN.NormalForms
++public import SmallPresentation.UniversalGroup.Foundations.Presentation
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Foundations/HNN/CentralizerIntoHNN.lean b/SmallPresentation/UniversalGroup/Foundations/HNN/CentralizerIntoHNN.lean
+rename from UniversalGroup/Foundations/HNN/CentralizerIntoHNN.lean
+rename to SmallPresentation/UniversalGroup/Foundations/HNN/CentralizerIntoHNN.lean
+--- a/UniversalGroup/Foundations/HNN/CentralizerIntoHNN.lean
++++ b/SmallPresentation/UniversalGroup/Foundations/HNN/CentralizerIntoHNN.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Foundations.HNN.NormalForms
++public import SmallPresentation.UniversalGroup.Foundations.HNN.NormalForms
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Foundations/HNN/CentralizerMap.lean b/SmallPresentation/UniversalGroup/Foundations/HNN/CentralizerMap.lean
+rename from UniversalGroup/Foundations/HNN/CentralizerMap.lean
+rename to SmallPresentation/UniversalGroup/Foundations/HNN/CentralizerMap.lean
+--- a/UniversalGroup/Foundations/HNN/CentralizerMap.lean
++++ b/SmallPresentation/UniversalGroup/Foundations/HNN/CentralizerMap.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Foundations.HNN.NormalForms
++public import SmallPresentation.UniversalGroup.Foundations.HNN.NormalForms
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Foundations/HNN/Identifying.lean b/SmallPresentation/UniversalGroup/Foundations/HNN/Identifying.lean
+similarity index 100%
+rename from UniversalGroup/Foundations/HNN/Identifying.lean
+rename to SmallPresentation/UniversalGroup/Foundations/HNN/Identifying.lean
+diff --git a/UniversalGroup/Foundations/HNN/Map.lean b/SmallPresentation/UniversalGroup/Foundations/HNN/Map.lean
+rename from UniversalGroup/Foundations/HNN/Map.lean
+rename to SmallPresentation/UniversalGroup/Foundations/HNN/Map.lean
+--- a/UniversalGroup/Foundations/HNN/Map.lean
++++ b/SmallPresentation/UniversalGroup/Foundations/HNN/Map.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Foundations.HNN.Identifying
++public import SmallPresentation.UniversalGroup.Foundations.HNN.Identifying
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Foundations/HNN/Multiple.lean b/SmallPresentation/UniversalGroup/Foundations/HNN/Multiple.lean
+similarity index 100%
+rename from UniversalGroup/Foundations/HNN/Multiple.lean
+rename to SmallPresentation/UniversalGroup/Foundations/HNN/Multiple.lean
+diff --git a/UniversalGroup/Foundations/HNN/Multiple/Flat.lean b/SmallPresentation/UniversalGroup/Foundations/HNN/Multiple/Flat.lean
+rename from UniversalGroup/Foundations/HNN/Multiple/Flat.lean
+rename to SmallPresentation/UniversalGroup/Foundations/HNN/Multiple/Flat.lean
+--- a/UniversalGroup/Foundations/HNN/Multiple/Flat.lean
++++ b/SmallPresentation/UniversalGroup/Foundations/HNN/Multiple/Flat.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Foundations.HNN.Multiple
++public import SmallPresentation.UniversalGroup.Foundations.HNN.Multiple
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Foundations/HNN/Multiple/FlatUniqueness.lean b/SmallPresentation/UniversalGroup/Foundations/HNN/Multiple/FlatUniqueness.lean
+rename from UniversalGroup/Foundations/HNN/Multiple/FlatUniqueness.lean
+rename to SmallPresentation/UniversalGroup/Foundations/HNN/Multiple/FlatUniqueness.lean
+--- a/UniversalGroup/Foundations/HNN/Multiple/FlatUniqueness.lean
++++ b/SmallPresentation/UniversalGroup/Foundations/HNN/Multiple/FlatUniqueness.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Foundations.HNN.Multiple.Flat
++public import SmallPresentation.UniversalGroup.Foundations.HNN.Multiple.Flat
+ public import Mathlib.Tactic.Group
+ 
+ @[expose] public section
+diff --git a/UniversalGroup/Foundations/HNN/NormalForms.lean b/SmallPresentation/UniversalGroup/Foundations/HNN/NormalForms.lean
+similarity index 100%
+rename from UniversalGroup/Foundations/HNN/NormalForms.lean
+rename to SmallPresentation/UniversalGroup/Foundations/HNN/NormalForms.lean
+diff --git a/UniversalGroup/Foundations/HNN/ProductGridHNN.lean b/SmallPresentation/UniversalGroup/Foundations/HNN/ProductGridHNN.lean
+rename from UniversalGroup/Foundations/HNN/ProductGridHNN.lean
+rename to SmallPresentation/UniversalGroup/Foundations/HNN/ProductGridHNN.lean
+--- a/UniversalGroup/Foundations/HNN/ProductGridHNN.lean
++++ b/SmallPresentation/UniversalGroup/Foundations/HNN/ProductGridHNN.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Foundations.HNN.Identifying
++public import SmallPresentation.UniversalGroup.Foundations.HNN.Identifying
+ public import Mathlib.GroupTheory.FreeGroup.Basic
+ public import Mathlib.GroupTheory.NoncommCoprod
+ public import Mathlib.Data.Fin.VecNotation
+diff --git a/UniversalGroup/Foundations/HNN/ReducedWordPeel.lean b/SmallPresentation/UniversalGroup/Foundations/HNN/ReducedWordPeel.lean
+rename from UniversalGroup/Foundations/HNN/ReducedWordPeel.lean
+rename to SmallPresentation/UniversalGroup/Foundations/HNN/ReducedWordPeel.lean
+--- a/UniversalGroup/Foundations/HNN/ReducedWordPeel.lean
++++ b/SmallPresentation/UniversalGroup/Foundations/HNN/ReducedWordPeel.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Foundations.HNN.NormalForms
++public import SmallPresentation.UniversalGroup.Foundations.HNN.NormalForms
+ public import Mathlib.Tactic.Group
+ 
+ @[expose] public section
+diff --git a/UniversalGroup/Foundations/HNN/TwistedCentralizer.lean b/SmallPresentation/UniversalGroup/Foundations/HNN/TwistedCentralizer.lean
+rename from UniversalGroup/Foundations/HNN/TwistedCentralizer.lean
+rename to SmallPresentation/UniversalGroup/Foundations/HNN/TwistedCentralizer.lean
+--- a/UniversalGroup/Foundations/HNN/TwistedCentralizer.lean
++++ b/SmallPresentation/UniversalGroup/Foundations/HNN/TwistedCentralizer.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Foundations.HNN.Identifying
+-public import UniversalGroup.Foundations.HNN.NormalForms
++public import SmallPresentation.UniversalGroup.Foundations.HNN.Identifying
++public import SmallPresentation.UniversalGroup.Foundations.HNN.NormalForms
+ public import Mathlib.Tactic.Group
+ 
+ @[expose] public section
+diff --git a/UniversalGroup/Foundations/Presentation.lean b/SmallPresentation/UniversalGroup/Foundations/Presentation.lean
+similarity index 100%
+rename from UniversalGroup/Foundations/Presentation.lean
+rename to SmallPresentation/UniversalGroup/Foundations/Presentation.lean
+diff --git a/UniversalGroup/Higman/Benign.lean b/SmallPresentation/UniversalGroup/Higman/Benign.lean
+rename from UniversalGroup/Higman/Benign.lean
+rename to SmallPresentation/UniversalGroup/Higman/Benign.lean
+--- a/UniversalGroup/Higman/Benign.lean
++++ b/SmallPresentation/UniversalGroup/Higman/Benign.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Foundations.FinitePresentation.Products
+-public import UniversalGroup.Foundations.Amalgam.Conjugated
++public import SmallPresentation.UniversalGroup.Foundations.FinitePresentation.Products
++public import SmallPresentation.UniversalGroup.Foundations.Amalgam.Conjugated
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Higman/Diagonal.lean b/SmallPresentation/UniversalGroup/Higman/Diagonal.lean
+rename from UniversalGroup/Higman/Diagonal.lean
+rename to SmallPresentation/UniversalGroup/Higman/Diagonal.lean
+--- a/UniversalGroup/Higman/Diagonal.lean
++++ b/SmallPresentation/UniversalGroup/Higman/Diagonal.lean
+@@ -1,7 +1,8 @@
+ module
+ 
+-public import UniversalGroup.Higman.Benign
+-public import UniversalGroup.Higman.PositiveKernel
++public import SmallPresentation.UniversalGroup.Higman.Benign
++public import SmallPresentation.UniversalGroup.Higman.PositiveKernel
++public import Mathlib.Tactic.Group
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Higman/EffectiveEmbedding/Free.lean b/SmallPresentation/UniversalGroup/Higman/EffectiveEmbedding/Free.lean
+rename from UniversalGroup/Higman/EffectiveEmbedding/Free.lean
+rename to SmallPresentation/UniversalGroup/Higman/EffectiveEmbedding/Free.lean
+--- a/UniversalGroup/Higman/EffectiveEmbedding/Free.lean
++++ b/SmallPresentation/UniversalGroup/Higman/EffectiveEmbedding/Free.lean
+@@ -5,7 +5,7 @@
+ public import Mathlib.Data.Fin.VecNotation
+ public import Mathlib.Algebra.CharP.Defs
+ public import Mathlib.Algebra.Order.Ring.Int
+-public import Mathlib.Data.Int.ConditionallyCompleteOrder
++public import Mathlib.Order.Int.ConditionallyCompleteOrder
+ public import Mathlib.Data.Nat.Cast.Order.Ring
+ public import Mathlib.Order.ConditionallyCompleteLattice.Basic
+ 
+diff --git a/UniversalGroup/Higman/EffectiveEmbedding/HNN.lean b/SmallPresentation/UniversalGroup/Higman/EffectiveEmbedding/HNN.lean
+rename from UniversalGroup/Higman/EffectiveEmbedding/HNN.lean
+rename to SmallPresentation/UniversalGroup/Higman/EffectiveEmbedding/HNN.lean
+--- a/UniversalGroup/Higman/EffectiveEmbedding/HNN.lean
++++ b/SmallPresentation/UniversalGroup/Higman/EffectiveEmbedding/HNN.lean
+@@ -1,8 +1,8 @@
+ module
+ 
+-public import UniversalGroup.Higman.EffectiveEmbedding.Free
+-public import UniversalGroup.Higman.Enumeration
+-public import UniversalGroup.Foundations.HNN.Identifying
++public import SmallPresentation.UniversalGroup.Higman.EffectiveEmbedding.Free
++public import SmallPresentation.UniversalGroup.Higman.Enumeration
++public import SmallPresentation.UniversalGroup.Foundations.HNN.Identifying
+ public import Mathlib.Tactic.FinCases
+ public import Mathlib.Tactic.Group
+ 
+diff --git a/UniversalGroup/Higman/EffectiveEmbedding/Presentation.lean b/SmallPresentation/UniversalGroup/Higman/EffectiveEmbedding/Presentation.lean
+rename from UniversalGroup/Higman/EffectiveEmbedding/Presentation.lean
+rename to SmallPresentation/UniversalGroup/Higman/EffectiveEmbedding/Presentation.lean
+--- a/UniversalGroup/Higman/EffectiveEmbedding/Presentation.lean
++++ b/SmallPresentation/UniversalGroup/Higman/EffectiveEmbedding/Presentation.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Higman.EffectiveEmbedding.Words
++public import SmallPresentation.UniversalGroup.Higman.EffectiveEmbedding.Words
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Higman/EffectiveEmbedding/Recursive.lean b/SmallPresentation/UniversalGroup/Higman/EffectiveEmbedding/Recursive.lean
+rename from UniversalGroup/Higman/EffectiveEmbedding/Recursive.lean
+rename to SmallPresentation/UniversalGroup/Higman/EffectiveEmbedding/Recursive.lean
+--- a/UniversalGroup/Higman/EffectiveEmbedding/Recursive.lean
++++ b/SmallPresentation/UniversalGroup/Higman/EffectiveEmbedding/Recursive.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Higman.EffectiveEmbedding.Presentation
+-public import UniversalGroup.Computability.Enumerable
++public import SmallPresentation.UniversalGroup.Higman.EffectiveEmbedding.Presentation
++public import SmallPresentation.UniversalGroup.Computability.Enumerable
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Higman/EffectiveEmbedding/Words.lean b/SmallPresentation/UniversalGroup/Higman/EffectiveEmbedding/Words.lean
+rename from UniversalGroup/Higman/EffectiveEmbedding/Words.lean
+rename to SmallPresentation/UniversalGroup/Higman/EffectiveEmbedding/Words.lean
+--- a/UniversalGroup/Higman/EffectiveEmbedding/Words.lean
++++ b/SmallPresentation/UniversalGroup/Higman/EffectiveEmbedding/Words.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Higman.EffectiveEmbedding.HNN
++public import SmallPresentation.UniversalGroup.Higman.EffectiveEmbedding.HNN
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Higman/Enumeration.lean b/SmallPresentation/UniversalGroup/Higman/Enumeration.lean
+rename from UniversalGroup/Higman/Enumeration.lean
+rename to SmallPresentation/UniversalGroup/Higman/Enumeration.lean
+--- a/UniversalGroup/Higman/Enumeration.lean
++++ b/SmallPresentation/UniversalGroup/Higman/Enumeration.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Foundations.Presentation
++public import SmallPresentation.UniversalGroup.Foundations.Presentation
+ public import Mathlib.Computability.RE
+ public import Mathlib.GroupTheory.CoprodI
+ 
+diff --git a/UniversalGroup/Higman/PositiveKernel.lean b/SmallPresentation/UniversalGroup/Higman/PositiveKernel.lean
+rename from UniversalGroup/Higman/PositiveKernel.lean
+rename to SmallPresentation/UniversalGroup/Higman/PositiveKernel.lean
+--- a/UniversalGroup/Higman/PositiveKernel.lean
++++ b/SmallPresentation/UniversalGroup/Higman/PositiveKernel.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Foundations.Presentation
++public import SmallPresentation.UniversalGroup.Foundations.Presentation
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Higman/Recognizer/Binary.lean b/SmallPresentation/UniversalGroup/Higman/Recognizer/Binary.lean
+rename from UniversalGroup/Higman/Recognizer/Binary.lean
+rename to SmallPresentation/UniversalGroup/Higman/Recognizer/Binary.lean
+--- a/UniversalGroup/Higman/Recognizer/Binary.lean
++++ b/SmallPresentation/UniversalGroup/Higman/Recognizer/Binary.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Higman.Recognizer.MachineInput
+-public import UniversalGroup.Computability.Machine.SupportedTM1Thue
++public import SmallPresentation.UniversalGroup.Higman.Recognizer.MachineInput
++public import SmallPresentation.UniversalGroup.Computability.Machine.SupportedTM1Thue
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Higman/Recognizer/Code.lean b/SmallPresentation/UniversalGroup/Higman/Recognizer/Code.lean
+rename from UniversalGroup/Higman/Recognizer/Code.lean
+rename to SmallPresentation/UniversalGroup/Higman/Recognizer/Code.lean
+--- a/UniversalGroup/Higman/Recognizer/Code.lean
++++ b/SmallPresentation/UniversalGroup/Higman/Recognizer/Code.lean
+@@ -1,8 +1,8 @@
+ module
+ 
+-public import UniversalGroup.Coding.BooneCollins.Words
+-public import UniversalGroup.Simulator.Codes.Cancellation
+-public import Mathlib.Data.Int.ConditionallyCompleteOrder
++public import SmallPresentation.UniversalGroup.Coding.BooneCollins.Words
++public import SmallPresentation.UniversalGroup.Simulator.Codes.Cancellation
++public import Mathlib.Order.Int.ConditionallyCompleteOrder
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Higman/Recognizer/CodeRecognizer.lean b/SmallPresentation/UniversalGroup/Higman/Recognizer/CodeRecognizer.lean
+rename from UniversalGroup/Higman/Recognizer/CodeRecognizer.lean
+rename to SmallPresentation/UniversalGroup/Higman/Recognizer/CodeRecognizer.lean
+--- a/UniversalGroup/Higman/Recognizer/CodeRecognizer.lean
++++ b/SmallPresentation/UniversalGroup/Higman/Recognizer/CodeRecognizer.lean
+@@ -1,8 +1,8 @@
+ module
+ 
+-public import UniversalGroup.Higman.Recognizer.Code
+-public import UniversalGroup.Simulator.Recognition.FiniteRank.Intersection
+-public import UniversalGroup.Higman.PositiveKernel
++public import SmallPresentation.UniversalGroup.Higman.Recognizer.Code
++public import SmallPresentation.UniversalGroup.Simulator.Recognition.FiniteRank.Intersection
++public import SmallPresentation.UniversalGroup.Higman.PositiveKernel
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Higman/Recognizer/FiniteAlphabet.lean b/SmallPresentation/UniversalGroup/Higman/Recognizer/FiniteAlphabet.lean
+rename from UniversalGroup/Higman/Recognizer/FiniteAlphabet.lean
+rename to SmallPresentation/UniversalGroup/Higman/Recognizer/FiniteAlphabet.lean
+--- a/UniversalGroup/Higman/Recognizer/FiniteAlphabet.lean
++++ b/SmallPresentation/UniversalGroup/Higman/Recognizer/FiniteAlphabet.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Higman.Recognizer.Binary
+-public import UniversalGroup.Computability.Enumerable
++public import SmallPresentation.UniversalGroup.Higman.Recognizer.Binary
++public import SmallPresentation.UniversalGroup.Computability.Enumerable
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Higman/Recognizer/MachineInput.lean b/SmallPresentation/UniversalGroup/Higman/Recognizer/MachineInput.lean
+rename from UniversalGroup/Higman/Recognizer/MachineInput.lean
+rename to SmallPresentation/UniversalGroup/Higman/Recognizer/MachineInput.lean
+--- a/UniversalGroup/Higman/Recognizer/MachineInput.lean
++++ b/SmallPresentation/UniversalGroup/Higman/Recognizer/MachineInput.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Computability.Machine.PartialRecursiveMachine
++public import SmallPresentation.UniversalGroup.Computability.Machine.PartialRecursiveMachine
+ public import Mathlib.Computability.RE
+ 
+ @[expose] public section
+diff --git a/UniversalGroup/Higman/Recognizer/MarkedSource.lean b/SmallPresentation/UniversalGroup/Higman/Recognizer/MarkedSource.lean
+rename from UniversalGroup/Higman/Recognizer/MarkedSource.lean
+rename to SmallPresentation/UniversalGroup/Higman/Recognizer/MarkedSource.lean
+--- a/UniversalGroup/Higman/Recognizer/MarkedSource.lean
++++ b/SmallPresentation/UniversalGroup/Higman/Recognizer/MarkedSource.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Higman.Recognizer.FiniteAlphabet
+-public import UniversalGroup.Higman.Recognizer.Triangular
++public import SmallPresentation.UniversalGroup.Higman.Recognizer.FiniteAlphabet
++public import SmallPresentation.UniversalGroup.Higman.Recognizer.Triangular
+ public import Mathlib.Data.Fintype.Sigma
+ public import Mathlib.Tactic.FinCases
+ 
+diff --git a/UniversalGroup/Higman/Recognizer/Triangular.lean b/SmallPresentation/UniversalGroup/Higman/Recognizer/Triangular.lean
+rename from UniversalGroup/Higman/Recognizer/Triangular.lean
+rename to SmallPresentation/UniversalGroup/Higman/Recognizer/Triangular.lean
+--- a/UniversalGroup/Higman/Recognizer/Triangular.lean
++++ b/SmallPresentation/UniversalGroup/Higman/Recognizer/Triangular.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Coding.SourceMarker
++public import SmallPresentation.UniversalGroup.Coding.SourceMarker
+ public import Mathlib.Algebra.Ring.Nat
+ 
+ @[expose] public section
+diff --git a/UniversalGroup/Higman/Recognizer/TriangularRecognizer.lean b/SmallPresentation/UniversalGroup/Higman/Recognizer/TriangularRecognizer.lean
+rename from UniversalGroup/Higman/Recognizer/TriangularRecognizer.lean
+rename to SmallPresentation/UniversalGroup/Higman/Recognizer/TriangularRecognizer.lean
+--- a/UniversalGroup/Higman/Recognizer/TriangularRecognizer.lean
++++ b/SmallPresentation/UniversalGroup/Higman/Recognizer/TriangularRecognizer.lean
+@@ -1,9 +1,9 @@
+ module
+ 
+-public import UniversalGroup.Higman.Recognizer.MarkedSource
+-public import UniversalGroup.Higman.Recognizer.Code
+-public import UniversalGroup.Coding.BooneCollins.Theorem
+-public import UniversalGroup.Coding.BooneCollins.Rules
++public import SmallPresentation.UniversalGroup.Higman.Recognizer.MarkedSource
++public import SmallPresentation.UniversalGroup.Higman.Recognizer.Code
++public import SmallPresentation.UniversalGroup.Coding.BooneCollins.Theorem
++public import SmallPresentation.UniversalGroup.Coding.BooneCollins.Rules
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Higman/SignedCover.lean b/SmallPresentation/UniversalGroup/Higman/SignedCover.lean
+rename from UniversalGroup/Higman/SignedCover.lean
+rename to SmallPresentation/UniversalGroup/Higman/SignedCover.lean
+--- a/UniversalGroup/Higman/SignedCover.lean
++++ b/SmallPresentation/UniversalGroup/Higman/SignedCover.lean
+@@ -1,8 +1,8 @@
+ module
+ 
+-public import UniversalGroup.Higman.Diagonal
+-public import UniversalGroup.Computability.WordProblem
+-public import UniversalGroup.Foundations.FinitePresentation.Generators
++public import SmallPresentation.UniversalGroup.Higman.Diagonal
++public import SmallPresentation.UniversalGroup.Computability.WordProblem
++public import SmallPresentation.UniversalGroup.Foundations.FinitePresentation.Generators
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Higman/Simulator/Embedding.lean b/SmallPresentation/UniversalGroup/Higman/Simulator/Embedding.lean
+rename from UniversalGroup/Higman/Simulator/Embedding.lean
+rename to SmallPresentation/UniversalGroup/Higman/Simulator/Embedding.lean
+--- a/UniversalGroup/Higman/Simulator/Embedding.lean
++++ b/SmallPresentation/UniversalGroup/Higman/Simulator/Embedding.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Recognition.FiniteRank.Intersection
+-public import UniversalGroup.Higman.Diagonal
++public import SmallPresentation.UniversalGroup.Simulator.Recognition.FiniteRank.Intersection
++public import SmallPresentation.UniversalGroup.Higman.Diagonal
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Higman/Theorem.lean b/SmallPresentation/UniversalGroup/Higman/Theorem.lean
+rename from UniversalGroup/Higman/Theorem.lean
+rename to SmallPresentation/UniversalGroup/Higman/Theorem.lean
+--- a/UniversalGroup/Higman/Theorem.lean
++++ b/SmallPresentation/UniversalGroup/Higman/Theorem.lean
+@@ -1,11 +1,11 @@
+ module
+ 
+-public import UniversalGroup.Higman.EffectiveEmbedding.Recursive
+-public import UniversalGroup.Computability.Generators
+-public import UniversalGroup.Higman.SignedCover
+-public import UniversalGroup.Higman.Simulator.Embedding
+-public import UniversalGroup.Higman.Recognizer.TriangularRecognizer
+-public import UniversalGroup.Higman.Recognizer.CodeRecognizer
++public import SmallPresentation.UniversalGroup.Higman.EffectiveEmbedding.Recursive
++public import SmallPresentation.UniversalGroup.Computability.Generators
++public import SmallPresentation.UniversalGroup.Higman.SignedCover
++public import SmallPresentation.UniversalGroup.Higman.Simulator.Embedding
++public import SmallPresentation.UniversalGroup.Higman.Recognizer.TriangularRecognizer
++public import SmallPresentation.UniversalGroup.Higman.Recognizer.CodeRecognizer
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Host/AStage.lean b/SmallPresentation/UniversalGroup/Host/AStage.lean
+rename from UniversalGroup/Host/AStage.lean
+rename to SmallPresentation/UniversalGroup/Host/AStage.lean
+--- a/UniversalGroup/Host/AStage.lean
++++ b/SmallPresentation/UniversalGroup/Host/AStage.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Foundations.HNN.Identifying
++public import SmallPresentation.UniversalGroup.Foundations.HNN.Identifying
+ public import Mathlib.GroupTheory.FreeGroup.Basic
+ public import Mathlib.GroupTheory.NoncommCoprod
+ public import Mathlib.Data.Fin.VecNotation
+diff --git a/UniversalGroup/Host/BStage.lean b/SmallPresentation/UniversalGroup/Host/BStage.lean
+rename from UniversalGroup/Host/BStage.lean
+rename to SmallPresentation/UniversalGroup/Host/BStage.lean
+--- a/UniversalGroup/Host/BStage.lean
++++ b/SmallPresentation/UniversalGroup/Host/BStage.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Host.InputTriples
+-public import UniversalGroup.Foundations.Conjugation
++public import SmallPresentation.UniversalGroup.Host.InputTriples
++public import SmallPresentation.UniversalGroup.Foundations.Conjugation
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Host/EllAlgebra.lean b/SmallPresentation/UniversalGroup/Host/EllAlgebra.lean
+rename from UniversalGroup/Host/EllAlgebra.lean
+rename to SmallPresentation/UniversalGroup/Host/EllAlgebra.lean
+--- a/UniversalGroup/Host/EllAlgebra.lean
++++ b/SmallPresentation/UniversalGroup/Host/EllAlgebra.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Host.PositiveEvaluation
+-public import UniversalGroup.Simulator.Codes.Bases
++public import SmallPresentation.UniversalGroup.Host.PositiveEvaluation
++public import SmallPresentation.UniversalGroup.Simulator.Codes.Bases
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Host/EllGrid.lean b/SmallPresentation/UniversalGroup/Host/EllGrid.lean
+rename from UniversalGroup/Host/EllGrid.lean
+rename to SmallPresentation/UniversalGroup/Host/EllGrid.lean
+--- a/UniversalGroup/Host/EllGrid.lean
++++ b/SmallPresentation/UniversalGroup/Host/EllGrid.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Host.InputFreeSubgroup
+-public import UniversalGroup.Simulator.Grid
++public import SmallPresentation.UniversalGroup.Host.InputFreeSubgroup
++public import SmallPresentation.UniversalGroup.Simulator.Grid
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Host/EllStage.lean b/SmallPresentation/UniversalGroup/Host/EllStage.lean
+rename from UniversalGroup/Host/EllStage.lean
+rename to SmallPresentation/UniversalGroup/Host/EllStage.lean
+--- a/UniversalGroup/Host/EllStage.lean
++++ b/SmallPresentation/UniversalGroup/Host/EllStage.lean
+@@ -1,10 +1,10 @@
+ module
+ 
+-public import UniversalGroup.Host.EllAlgebra
+-public import UniversalGroup.Simulator.Centralizer
+-public import UniversalGroup.Foundations.Amalgam.Conjugated
+-public import UniversalGroup.Foundations.HNN.Identifying
+-public import UniversalGroup.Host.InputAmalgam
++public import SmallPresentation.UniversalGroup.Host.EllAlgebra
++public import SmallPresentation.UniversalGroup.Simulator.Centralizer
++public import SmallPresentation.UniversalGroup.Foundations.Amalgam.Conjugated
++public import SmallPresentation.UniversalGroup.Foundations.HNN.Identifying
++public import SmallPresentation.UniversalGroup.Host.InputAmalgam
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Host/InputAmalgam.lean b/SmallPresentation/UniversalGroup/Host/InputAmalgam.lean
+rename from UniversalGroup/Host/InputAmalgam.lean
+rename to SmallPresentation/UniversalGroup/Host/InputAmalgam.lean
+--- a/UniversalGroup/Host/InputAmalgam.lean
++++ b/SmallPresentation/UniversalGroup/Host/InputAmalgam.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Data
+-public import UniversalGroup.Foundations.Amalgam.Centralizing
++public import SmallPresentation.UniversalGroup.Simulator.Data
++public import SmallPresentation.UniversalGroup.Foundations.Amalgam.Centralizing
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Host/InputFreeSubgroup.lean b/SmallPresentation/UniversalGroup/Host/InputFreeSubgroup.lean
+rename from UniversalGroup/Host/InputFreeSubgroup.lean
+rename to SmallPresentation/UniversalGroup/Host/InputFreeSubgroup.lean
+--- a/UniversalGroup/Host/InputFreeSubgroup.lean
++++ b/SmallPresentation/UniversalGroup/Host/InputFreeSubgroup.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Host.EllStage
++public import SmallPresentation.UniversalGroup.Host.EllStage
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Host/InputTriples.lean b/SmallPresentation/UniversalGroup/Host/InputTriples.lean
+rename from UniversalGroup/Host/InputTriples.lean
+rename to SmallPresentation/UniversalGroup/Host/InputTriples.lean
+--- a/UniversalGroup/Host/InputTriples.lean
++++ b/SmallPresentation/UniversalGroup/Host/InputTriples.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Host.InputFreeSubgroup
++public import SmallPresentation.UniversalGroup.Host.InputFreeSubgroup
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Host/PositiveEvaluation.lean b/SmallPresentation/UniversalGroup/Host/PositiveEvaluation.lean
+rename from UniversalGroup/Host/PositiveEvaluation.lean
+rename to SmallPresentation/UniversalGroup/Host/PositiveEvaluation.lean
+--- a/UniversalGroup/Host/PositiveEvaluation.lean
++++ b/SmallPresentation/UniversalGroup/Host/PositiveEvaluation.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Data
++public import SmallPresentation.UniversalGroup.Simulator.Data
+ public import Mathlib.Tactic.Group
+ 
+ @[expose] public section
+diff --git a/UniversalGroup/Host/SymmetryGrid.lean b/SmallPresentation/UniversalGroup/Host/SymmetryGrid.lean
+rename from UniversalGroup/Host/SymmetryGrid.lean
+rename to SmallPresentation/UniversalGroup/Host/SymmetryGrid.lean
+--- a/UniversalGroup/Host/SymmetryGrid.lean
++++ b/SmallPresentation/UniversalGroup/Host/SymmetryGrid.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Host.SymmetrySubgroups
+-public import UniversalGroup.Host.EllGrid
++public import SmallPresentation.UniversalGroup.Host.SymmetrySubgroups
++public import SmallPresentation.UniversalGroup.Host.EllGrid
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Host/SymmetrySubgroups.lean b/SmallPresentation/UniversalGroup/Host/SymmetrySubgroups.lean
+rename from UniversalGroup/Host/SymmetrySubgroups.lean
+rename to SmallPresentation/UniversalGroup/Host/SymmetrySubgroups.lean
+--- a/UniversalGroup/Host/SymmetrySubgroups.lean
++++ b/SmallPresentation/UniversalGroup/Host/SymmetrySubgroups.lean
+@@ -1,8 +1,8 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Symmetry.CodeIntersections
+-public import UniversalGroup.Foundations.Amalgam.Restriction
+-public import UniversalGroup.Foundations.HNN.CentralizerIntoHNN
++public import SmallPresentation.UniversalGroup.Simulator.Symmetry.CodeIntersections
++public import SmallPresentation.UniversalGroup.Foundations.Amalgam.Restriction
++public import SmallPresentation.UniversalGroup.Foundations.HNN.CentralizerIntoHNN
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Host/Words.lean b/SmallPresentation/UniversalGroup/Host/Words.lean
+rename from UniversalGroup/Host/Words.lean
+rename to SmallPresentation/UniversalGroup/Host/Words.lean
+--- a/UniversalGroup/Host/Words.lean
++++ b/SmallPresentation/UniversalGroup/Host/Words.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Foundations.Presentation
++public import SmallPresentation.UniversalGroup.Foundations.Presentation
+ public import Mathlib.Data.Fin.VecNotation
+ 
+ @[expose] public section
+diff --git a/UniversalGroup/Preparation/Conjugations.lean b/SmallPresentation/UniversalGroup/Preparation/Conjugations.lean
+rename from UniversalGroup/Preparation/Conjugations.lean
+rename to SmallPresentation/UniversalGroup/Preparation/Conjugations.lean
+--- a/UniversalGroup/Preparation/Conjugations.lean
++++ b/SmallPresentation/UniversalGroup/Preparation/Conjugations.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Preparation.Cyclic
+-public import UniversalGroup.Foundations.FinitePresentation.Extensions
++public import SmallPresentation.UniversalGroup.Preparation.Cyclic
++public import SmallPresentation.UniversalGroup.Foundations.FinitePresentation.Extensions
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Preparation/Cyclic.lean b/SmallPresentation/UniversalGroup/Preparation/Cyclic.lean
+rename from UniversalGroup/Preparation/Cyclic.lean
+rename to SmallPresentation/UniversalGroup/Preparation/Cyclic.lean
+--- a/UniversalGroup/Preparation/Cyclic.lean
++++ b/SmallPresentation/UniversalGroup/Preparation/Cyclic.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Preparation.Reflections
++public import SmallPresentation.UniversalGroup.Preparation.Reflections
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Preparation/FreeProduct.lean b/SmallPresentation/UniversalGroup/Preparation/FreeProduct.lean
+rename from UniversalGroup/Preparation/FreeProduct.lean
+rename to SmallPresentation/UniversalGroup/Preparation/FreeProduct.lean
+--- a/UniversalGroup/Preparation/FreeProduct.lean
++++ b/SmallPresentation/UniversalGroup/Preparation/FreeProduct.lean
+@@ -4,7 +4,7 @@
+ public import Mathlib.GroupTheory.FreeGroup.Basic
+ public import Mathlib.Data.ZMod.Basic
+ public import Mathlib.Data.Fin.VecNotation
+-public import Mathlib.Data.Int.ConditionallyCompleteOrder
++public import Mathlib.Order.Int.ConditionallyCompleteOrder
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Preparation/Positive.lean b/SmallPresentation/UniversalGroup/Preparation/Positive.lean
+rename from UniversalGroup/Preparation/Positive.lean
+rename to SmallPresentation/UniversalGroup/Preparation/Positive.lean
+--- a/UniversalGroup/Preparation/Positive.lean
++++ b/SmallPresentation/UniversalGroup/Preparation/Positive.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Coding.Data
++public import SmallPresentation.UniversalGroup.Coding.Data
+ public import Mathlib.Data.ZMod.Defs
+ public import Mathlib.Tactic.FinCases
+ public import Mathlib.Tactic.Group
+diff --git a/UniversalGroup/Preparation/ReflectionInput.lean b/SmallPresentation/UniversalGroup/Preparation/ReflectionInput.lean
+rename from UniversalGroup/Preparation/ReflectionInput.lean
+rename to SmallPresentation/UniversalGroup/Preparation/ReflectionInput.lean
+--- a/UniversalGroup/Preparation/ReflectionInput.lean
++++ b/SmallPresentation/UniversalGroup/Preparation/ReflectionInput.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Preparation.ReflectionStage
+-public import UniversalGroup.Preparation.TwoGenerators
++public import SmallPresentation.UniversalGroup.Preparation.ReflectionStage
++public import SmallPresentation.UniversalGroup.Preparation.TwoGenerators
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Preparation/ReflectionStage.lean b/SmallPresentation/UniversalGroup/Preparation/ReflectionStage.lean
+rename from UniversalGroup/Preparation/ReflectionStage.lean
+rename to SmallPresentation/UniversalGroup/Preparation/ReflectionStage.lean
+--- a/UniversalGroup/Preparation/ReflectionStage.lean
++++ b/SmallPresentation/UniversalGroup/Preparation/ReflectionStage.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Preparation.Conjugations
+-public import UniversalGroup.Foundations.FinitePresentation.Products
++public import SmallPresentation.UniversalGroup.Preparation.Conjugations
++public import SmallPresentation.UniversalGroup.Foundations.FinitePresentation.Products
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Preparation/Reflections.lean b/SmallPresentation/UniversalGroup/Preparation/Reflections.lean
+rename from UniversalGroup/Preparation/Reflections.lean
+rename to SmallPresentation/UniversalGroup/Preparation/Reflections.lean
+--- a/UniversalGroup/Preparation/Reflections.lean
++++ b/SmallPresentation/UniversalGroup/Preparation/Reflections.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Coding.Data
++public import SmallPresentation.UniversalGroup.Coding.Data
+ public import Mathlib.GroupTheory.FinitelyPresentedGroup
+ 
+ @[expose] public section
+diff --git a/UniversalGroup/Preparation/TwoGenerators.lean b/SmallPresentation/UniversalGroup/Preparation/TwoGenerators.lean
+rename from UniversalGroup/Preparation/TwoGenerators.lean
+rename to SmallPresentation/UniversalGroup/Preparation/TwoGenerators.lean
+--- a/UniversalGroup/Preparation/TwoGenerators.lean
++++ b/SmallPresentation/UniversalGroup/Preparation/TwoGenerators.lean
+@@ -1,8 +1,8 @@
+ module
+ 
+-public import UniversalGroup.Preparation.FreeProduct
+-public import UniversalGroup.Preparation.Cyclic
+-public import UniversalGroup.Foundations.FinitePresentation.Extensions
++public import SmallPresentation.UniversalGroup.Preparation.FreeProduct
++public import SmallPresentation.UniversalGroup.Preparation.Cyclic
++public import SmallPresentation.UniversalGroup.Foundations.FinitePresentation.Extensions
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Centralizer.lean b/SmallPresentation/UniversalGroup/Simulator/Centralizer.lean
+rename from UniversalGroup/Simulator/Centralizer.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Centralizer.lean
+--- a/UniversalGroup/Simulator/Centralizer.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Centralizer.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Data
+-public import UniversalGroup.Foundations.HNN.NormalForms
++public import SmallPresentation.UniversalGroup.Simulator.Data
++public import SmallPresentation.UniversalGroup.Foundations.HNN.NormalForms
+ public import Mathlib.Tactic.Group
+ 
+ @[expose] public section
+diff --git a/UniversalGroup/Simulator/Codes/Bases.lean b/SmallPresentation/UniversalGroup/Simulator/Codes/Bases.lean
+rename from UniversalGroup/Simulator/Codes/Bases.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Codes/Bases.lean
+--- a/UniversalGroup/Simulator/Codes/Bases.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Codes/Bases.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Codes.Free
+-public import UniversalGroup.Simulator.FreeLetters
++public import SmallPresentation.UniversalGroup.Simulator.Codes.Free
++public import SmallPresentation.UniversalGroup.Simulator.FreeLetters
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Codes/Cancellation.lean b/SmallPresentation/UniversalGroup/Simulator/Codes/Cancellation.lean
+rename from UniversalGroup/Simulator/Codes/Cancellation.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Codes/Cancellation.lean
+--- a/UniversalGroup/Simulator/Codes/Cancellation.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Codes/Cancellation.lean
+@@ -1,7 +1,8 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Codes.Free
+-public import UniversalGroup.Simulator.Core.PositiveWords
++public import SmallPresentation.UniversalGroup.Simulator.Codes.Free
++public import SmallPresentation.UniversalGroup.Simulator.Core.PositiveWords
++public import Mathlib.Tactic.Group
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Codes/Free.lean b/SmallPresentation/UniversalGroup/Simulator/Codes/Free.lean
+rename from UniversalGroup/Simulator/Codes/Free.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Codes/Free.lean
+--- a/UniversalGroup/Simulator/Codes/Free.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Codes/Free.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Core.SupportedRules
++public import SmallPresentation.UniversalGroup.Simulator.Core.SupportedRules
+ public import Mathlib.Algebra.BigOperators.Group.List.Basic
+ public import Mathlib.Algebra.Order.Group.Nat
+ public import Mathlib.Algebra.Ring.Nat
+diff --git a/UniversalGroup/Simulator/Codes/LeftIntersection.lean b/SmallPresentation/UniversalGroup/Simulator/Codes/LeftIntersection.lean
+rename from UniversalGroup/Simulator/Codes/LeftIntersection.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Codes/LeftIntersection.lean
+--- a/UniversalGroup/Simulator/Codes/LeftIntersection.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Codes/LeftIntersection.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Codes.Free
++public import SmallPresentation.UniversalGroup.Simulator.Codes.Free
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Codes/RightAction.lean b/SmallPresentation/UniversalGroup/Simulator/Codes/RightAction.lean
+rename from UniversalGroup/Simulator/Codes/RightAction.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Codes/RightAction.lean
+--- a/UniversalGroup/Simulator/Codes/RightAction.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Codes/RightAction.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Codes.LeftIntersection
++public import SmallPresentation.UniversalGroup.Simulator.Codes.LeftIntersection
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Codes/RightIntersection.lean b/SmallPresentation/UniversalGroup/Simulator/Codes/RightIntersection.lean
+rename from UniversalGroup/Simulator/Codes/RightIntersection.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Codes/RightIntersection.lean
+--- a/UniversalGroup/Simulator/Codes/RightIntersection.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Codes/RightIntersection.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Codes.RightAction
++public import SmallPresentation.UniversalGroup.Simulator.Codes.RightAction
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Core/BaseHNN.lean b/SmallPresentation/UniversalGroup/Simulator/Core/BaseHNN.lean
+rename from UniversalGroup/Simulator/Core/BaseHNN.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Core/BaseHNN.lean
+--- a/UniversalGroup/Simulator/Core/BaseHNN.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Core/BaseHNN.lean
+@@ -1,7 +1,8 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Core.IntersectionData
+-public import UniversalGroup.Simulator.Core.PowerHNNModel
++public import SmallPresentation.UniversalGroup.Simulator.Core.IntersectionData
++public import SmallPresentation.UniversalGroup.Simulator.Core.PowerHNNModel
++public import Mathlib.Tactic.Group
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Core/BaseIntersections.lean b/SmallPresentation/UniversalGroup/Simulator/Core/BaseIntersections.lean
+rename from UniversalGroup/Simulator/Core/BaseIntersections.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Core/BaseIntersections.lean
+--- a/UniversalGroup/Simulator/Core/BaseIntersections.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Core/BaseIntersections.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Core.FreeBasis
++public import SmallPresentation.UniversalGroup.Simulator.Core.FreeBasis
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Core/BaseNormalForm.lean b/SmallPresentation/UniversalGroup/Simulator/Core/BaseNormalForm.lean
+rename from UniversalGroup/Simulator/Core/BaseNormalForm.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Core/BaseNormalForm.lean
+--- a/UniversalGroup/Simulator/Core/BaseNormalForm.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Core/BaseNormalForm.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Core.BaseHNN
++public import SmallPresentation.UniversalGroup.Simulator.Core.BaseHNN
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Core/BoundaryPinch.lean b/SmallPresentation/UniversalGroup/Simulator/Core/BoundaryPinch.lean
+rename from UniversalGroup/Simulator/Core/BoundaryPinch.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Core/BoundaryPinch.lean
+--- a/UniversalGroup/Simulator/Core/BoundaryPinch.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Core/BoundaryPinch.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Core.PowerHNNModel
+-public import UniversalGroup.Simulator.Core.IntersectionData
++public import SmallPresentation.UniversalGroup.Simulator.Core.PowerHNNModel
++public import SmallPresentation.UniversalGroup.Simulator.Core.IntersectionData
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Core/CStage.lean b/SmallPresentation/UniversalGroup/Simulator/Core/CStage.lean
+rename from UniversalGroup/Simulator/Core/CStage.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Core/CStage.lean
+--- a/UniversalGroup/Simulator/Core/CStage.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Core/CStage.lean
+@@ -1,8 +1,8 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Core.PowerHNNModel
+-public import UniversalGroup.Foundations.HNN.NormalForms
+-public import UniversalGroup.Simulator.Core.SupportedRules
++public import SmallPresentation.UniversalGroup.Simulator.Core.PowerHNNModel
++public import SmallPresentation.UniversalGroup.Foundations.HNN.NormalForms
++public import SmallPresentation.UniversalGroup.Simulator.Core.SupportedRules
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Core/CoefficientShapes.lean b/SmallPresentation/UniversalGroup/Simulator/Core/CoefficientShapes.lean
+rename from UniversalGroup/Simulator/Core/CoefficientShapes.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Core/CoefficientShapes.lean
+--- a/UniversalGroup/Simulator/Core/CoefficientShapes.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Core/CoefficientShapes.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Core.PinchCoefficientClassification
++public import SmallPresentation.UniversalGroup.Simulator.Core.PinchCoefficientClassification
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Core/CoefficientSigns.lean b/SmallPresentation/UniversalGroup/Simulator/Core/CoefficientSigns.lean
+rename from UniversalGroup/Simulator/Core/CoefficientSigns.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Core/CoefficientSigns.lean
+--- a/UniversalGroup/Simulator/Core/CoefficientSigns.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Core/CoefficientSigns.lean
+@@ -1,8 +1,8 @@
+ module
+ 
+-public import UniversalGroup.Foundations.HNN.Multiple.FlatUniqueness
+-public import UniversalGroup.Simulator.Core.CoefficientShapes
+-public import UniversalGroup.Simulator.Core.IntersectionsTransport
++public import SmallPresentation.UniversalGroup.Foundations.HNN.Multiple.FlatUniqueness
++public import SmallPresentation.UniversalGroup.Simulator.Core.CoefficientShapes
++public import SmallPresentation.UniversalGroup.Simulator.Core.IntersectionsTransport
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Core/ContextNormalForm.lean b/SmallPresentation/UniversalGroup/Simulator/Core/ContextNormalForm.lean
+rename from UniversalGroup/Simulator/Core/ContextNormalForm.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Core/ContextNormalForm.lean
+--- a/UniversalGroup/Simulator/Core/ContextNormalForm.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Core/ContextNormalForm.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Core.RecognitionContexts
++public import SmallPresentation.UniversalGroup.Simulator.Core.RecognitionContexts
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Core/CoreLift.lean b/SmallPresentation/UniversalGroup/Simulator/Core/CoreLift.lean
+rename from UniversalGroup/Simulator/Core/CoreLift.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Core/CoreLift.lean
+--- a/UniversalGroup/Simulator/Core/CoreLift.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Core/CoreLift.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Core.CStage
+-public import UniversalGroup.Simulator.Core.BaseHNN
++public import SmallPresentation.UniversalGroup.Simulator.Core.CStage
++public import SmallPresentation.UniversalGroup.Simulator.Core.BaseHNN
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Core/FreeBasis.lean b/SmallPresentation/UniversalGroup/Simulator/Core/FreeBasis.lean
+rename from UniversalGroup/Simulator/Core/FreeBasis.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Core/FreeBasis.lean
+--- a/UniversalGroup/Simulator/Core/FreeBasis.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Core/FreeBasis.lean
+@@ -1,9 +1,9 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Core.CStage
+-public import UniversalGroup.Simulator.Core.BoundaryPinch
+-public import UniversalGroup.Simulator.Core.BaseNormalForm
+-public import UniversalGroup.Foundations.HNN.Multiple.Flat
++public import SmallPresentation.UniversalGroup.Simulator.Core.CStage
++public import SmallPresentation.UniversalGroup.Simulator.Core.BoundaryPinch
++public import SmallPresentation.UniversalGroup.Simulator.Core.BaseNormalForm
++public import SmallPresentation.UniversalGroup.Foundations.HNN.Multiple.Flat
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Core/FreeSubgroups.lean b/SmallPresentation/UniversalGroup/Simulator/Core/FreeSubgroups.lean
+rename from UniversalGroup/Simulator/Core/FreeSubgroups.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Core/FreeSubgroups.lean
+--- a/UniversalGroup/Simulator/Core/FreeSubgroups.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Core/FreeSubgroups.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Core.IntersectionsTransport
++public import SmallPresentation.UniversalGroup.Simulator.Core.IntersectionsTransport
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Core/IntersectionData.lean b/SmallPresentation/UniversalGroup/Simulator/Core/IntersectionData.lean
+rename from UniversalGroup/Simulator/Core/IntersectionData.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Core/IntersectionData.lean
+--- a/UniversalGroup/Simulator/Core/IntersectionData.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Core/IntersectionData.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Core.SupportedRules
++public import SmallPresentation.UniversalGroup.Simulator.Core.SupportedRules
+ public import Mathlib.GroupTheory.FreeGroup.Reduce
+ public import Mathlib.Tactic.FinCases
+ 
+diff --git a/UniversalGroup/Simulator/Core/IntersectionsTransport.lean b/SmallPresentation/UniversalGroup/Simulator/Core/IntersectionsTransport.lean
+rename from UniversalGroup/Simulator/Core/IntersectionsTransport.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Core/IntersectionsTransport.lean
+--- a/UniversalGroup/Simulator/Core/IntersectionsTransport.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Core/IntersectionsTransport.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Core.BaseIntersections
++public import SmallPresentation.UniversalGroup.Simulator.Core.BaseIntersections
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Core/Lemma4Pinch.lean b/SmallPresentation/UniversalGroup/Simulator/Core/Lemma4Pinch.lean
+rename from UniversalGroup/Simulator/Core/Lemma4Pinch.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Core/Lemma4Pinch.lean
+--- a/UniversalGroup/Simulator/Core/Lemma4Pinch.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Core/Lemma4Pinch.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Core.RecognitionContexts
++public import SmallPresentation.UniversalGroup.Simulator.Core.RecognitionContexts
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Core/Mod5/BaseWords.lean b/SmallPresentation/UniversalGroup/Simulator/Core/Mod5/BaseWords.lean
+rename from UniversalGroup/Simulator/Core/Mod5/BaseWords.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Core/Mod5/BaseWords.lean
+--- a/UniversalGroup/Simulator/Core/Mod5/BaseWords.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Core/Mod5/BaseWords.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Core.Mod5.Quotient
++public import SmallPresentation.UniversalGroup.Simulator.Core.Mod5.Quotient
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Core/Mod5/Quotient.lean b/SmallPresentation/UniversalGroup/Simulator/Core/Mod5/Quotient.lean
+rename from UniversalGroup/Simulator/Core/Mod5/Quotient.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Core/Mod5/Quotient.lean
+--- a/UniversalGroup/Simulator/Core/Mod5/Quotient.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Core/Mod5/Quotient.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Core.CStage
++public import SmallPresentation.UniversalGroup.Simulator.Core.CStage
+ public import Mathlib.GroupTheory.SemidirectProduct
+ 
+ @[expose] public section
+diff --git a/UniversalGroup/Simulator/Core/Mod5/Sparsity.lean b/SmallPresentation/UniversalGroup/Simulator/Core/Mod5/Sparsity.lean
+rename from UniversalGroup/Simulator/Core/Mod5/Sparsity.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Core/Mod5/Sparsity.lean
+--- a/UniversalGroup/Simulator/Core/Mod5/Sparsity.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Core/Mod5/Sparsity.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Core.CoefficientSigns
+-public import UniversalGroup.Simulator.Core.Mod5.WordLength
++public import SmallPresentation.UniversalGroup.Simulator.Core.CoefficientSigns
++public import SmallPresentation.UniversalGroup.Simulator.Core.Mod5.WordLength
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Core/Mod5/WordLength.lean b/SmallPresentation/UniversalGroup/Simulator/Core/Mod5/WordLength.lean
+rename from UniversalGroup/Simulator/Core/Mod5/WordLength.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Core/Mod5/WordLength.lean
+--- a/UniversalGroup/Simulator/Core/Mod5/WordLength.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Core/Mod5/WordLength.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Core.Mod5.BaseWords
++public import SmallPresentation.UniversalGroup.Simulator.Core.Mod5.BaseWords
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Core/PinchClassification.lean b/SmallPresentation/UniversalGroup/Simulator/Core/PinchClassification.lean
+rename from UniversalGroup/Simulator/Core/PinchClassification.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Core/PinchClassification.lean
+--- a/UniversalGroup/Simulator/Core/PinchClassification.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Core/PinchClassification.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Core.CStage
++public import SmallPresentation.UniversalGroup.Simulator.Core.CStage
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Core/PinchCoefficientClassification.lean b/SmallPresentation/UniversalGroup/Simulator/Core/PinchCoefficientClassification.lean
+rename from UniversalGroup/Simulator/Core/PinchCoefficientClassification.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Core/PinchCoefficientClassification.lean
+--- a/UniversalGroup/Simulator/Core/PinchCoefficientClassification.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Core/PinchCoefficientClassification.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Core.PinchClassification
+-public import UniversalGroup.Simulator.Core.CoreLift
++public import SmallPresentation.UniversalGroup.Simulator.Core.PinchClassification
++public import SmallPresentation.UniversalGroup.Simulator.Core.CoreLift
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Core/PositiveWords.lean b/SmallPresentation/UniversalGroup/Simulator/Core/PositiveWords.lean
+rename from UniversalGroup/Simulator/Core/PositiveWords.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Core/PositiveWords.lean
+--- a/UniversalGroup/Simulator/Core/PositiveWords.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Core/PositiveWords.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Core.CStage
++public import SmallPresentation.UniversalGroup.Simulator.Core.CStage
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Core/PowerHNNModel.lean b/SmallPresentation/UniversalGroup/Simulator/Core/PowerHNNModel.lean
+rename from UniversalGroup/Simulator/Core/PowerHNNModel.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Core/PowerHNNModel.lean
+--- a/UniversalGroup/Simulator/Core/PowerHNNModel.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Core/PowerHNNModel.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Foundations.Coproduct
++public import SmallPresentation.UniversalGroup.Foundations.Coproduct
+ public import Mathlib.GroupTheory.HNNExtension
+ public import Mathlib.GroupTheory.FreeGroup.CyclicallyReduced
+ public import Mathlib.Data.Fin.VecNotation
+diff --git a/UniversalGroup/Simulator/Core/RecognitionContexts.lean b/SmallPresentation/UniversalGroup/Simulator/Core/RecognitionContexts.lean
+rename from UniversalGroup/Simulator/Core/RecognitionContexts.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Core/RecognitionContexts.lean
+--- a/UniversalGroup/Simulator/Core/RecognitionContexts.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Core/RecognitionContexts.lean
+@@ -1,6 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Core.PinchClassification
++public import SmallPresentation.UniversalGroup.Simulator.Core.PinchClassification
++public import Mathlib.Tactic.Group
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Core/RecognitionGeometry.lean b/SmallPresentation/UniversalGroup/Simulator/Core/RecognitionGeometry.lean
+rename from UniversalGroup/Simulator/Core/RecognitionGeometry.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Core/RecognitionGeometry.lean
+--- a/UniversalGroup/Simulator/Core/RecognitionGeometry.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Core/RecognitionGeometry.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Foundations.Amalgam.Conjugated
++public import SmallPresentation.UniversalGroup.Foundations.Amalgam.Conjugated
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Core/SupportedRules.lean b/SmallPresentation/UniversalGroup/Simulator/Core/SupportedRules.lean
+rename from UniversalGroup/Simulator/Core/SupportedRules.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Core/SupportedRules.lean
+--- a/UniversalGroup/Simulator/Core/SupportedRules.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Core/SupportedRules.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Coding.Data
++public import SmallPresentation.UniversalGroup.Coding.Data
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Core/Symmetry.lean b/SmallPresentation/UniversalGroup/Simulator/Core/Symmetry.lean
+rename from UniversalGroup/Simulator/Core/Symmetry.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Core/Symmetry.lean
+--- a/UniversalGroup/Simulator/Core/Symmetry.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Core/Symmetry.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Core.IntersectionsTransport
++public import SmallPresentation.UniversalGroup.Simulator.Core.IntersectionsTransport
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/DModel.lean b/SmallPresentation/UniversalGroup/Simulator/DModel.lean
+rename from UniversalGroup/Simulator/DModel.lean
+rename to SmallPresentation/UniversalGroup/Simulator/DModel.lean
+--- a/UniversalGroup/Simulator/DModel.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/DModel.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Recognition.Forward
+-public import UniversalGroup.Foundations.HNN.TwistedCentralizer
++public import SmallPresentation.UniversalGroup.Simulator.Recognition.Forward
++public import SmallPresentation.UniversalGroup.Foundations.HNN.TwistedCentralizer
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Data.lean b/SmallPresentation/UniversalGroup/Simulator/Data.lean
+rename from UniversalGroup/Simulator/Data.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Data.lean
+--- a/UniversalGroup/Simulator/Data.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Data.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Coding.Data
++public import SmallPresentation.UniversalGroup.Coding.Data
+ public import Mathlib.Algebra.Order.Group.Nat
+ public import Mathlib.Data.Nat.Cast.Order.Basic
+ public import Mathlib.Tactic.FinCases
+diff --git a/UniversalGroup/Simulator/FreeLetters.lean b/SmallPresentation/UniversalGroup/Simulator/FreeLetters.lean
+rename from UniversalGroup/Simulator/FreeLetters.lean
+rename to SmallPresentation/UniversalGroup/Simulator/FreeLetters.lean
+--- a/UniversalGroup/Simulator/FreeLetters.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/FreeLetters.lean
+@@ -1,8 +1,8 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Model
+-public import UniversalGroup.Simulator.Core.FreeSubgroups
+-public import UniversalGroup.Foundations.HNN.AdjoinFree
++public import SmallPresentation.UniversalGroup.Simulator.Model
++public import SmallPresentation.UniversalGroup.Simulator.Core.FreeSubgroups
++public import SmallPresentation.UniversalGroup.Foundations.HNN.AdjoinFree
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Grid.lean b/SmallPresentation/UniversalGroup/Simulator/Grid.lean
+rename from UniversalGroup/Simulator/Grid.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Grid.lean
+--- a/UniversalGroup/Simulator/Grid.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Grid.lean
+@@ -1,8 +1,8 @@
+ module
+ 
+-public import UniversalGroup.Host.EllAlgebra
+-public import UniversalGroup.Simulator.Centralizer
+-public import UniversalGroup.Host.InputAmalgam
++public import SmallPresentation.UniversalGroup.Host.EllAlgebra
++public import SmallPresentation.UniversalGroup.Simulator.Centralizer
++public import SmallPresentation.UniversalGroup.Host.InputAmalgam
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Intersections.lean b/SmallPresentation/UniversalGroup/Simulator/Intersections.lean
+rename from UniversalGroup/Simulator/Intersections.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Intersections.lean
+--- a/UniversalGroup/Simulator/Intersections.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Intersections.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Recognition.AIntersection
+-public import UniversalGroup.Simulator.Recognition.BIntersection
++public import SmallPresentation.UniversalGroup.Simulator.Recognition.AIntersection
++public import SmallPresentation.UniversalGroup.Simulator.Recognition.BIntersection
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Model.lean b/SmallPresentation/UniversalGroup/Simulator/Model.lean
+rename from UniversalGroup/Simulator/Model.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Model.lean
+--- a/UniversalGroup/Simulator/Model.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Model.lean
+@@ -1,8 +1,8 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Relations
+-public import UniversalGroup.Simulator.Core.IntersectionsTransport
+-public import UniversalGroup.Simulator.Core.CoreLift
++public import SmallPresentation.UniversalGroup.Simulator.Relations
++public import SmallPresentation.UniversalGroup.Simulator.Core.IntersectionsTransport
++public import SmallPresentation.UniversalGroup.Simulator.Core.CoreLift
+ public import Mathlib.Algebra.Group.Commute.Hom
+ 
+ @[expose] public section
+diff --git a/UniversalGroup/Simulator/Recognition/ACoefficients.lean b/SmallPresentation/UniversalGroup/Simulator/Recognition/ACoefficients.lean
+rename from UniversalGroup/Simulator/Recognition/ACoefficients.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Recognition/ACoefficients.lean
+--- a/UniversalGroup/Simulator/Recognition/ACoefficients.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Recognition/ACoefficients.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Recognition.BCoefficients
+-public import UniversalGroup.Simulator.Core.RecognitionGeometry
++public import SmallPresentation.UniversalGroup.Simulator.Recognition.BCoefficients
++public import SmallPresentation.UniversalGroup.Simulator.Core.RecognitionGeometry
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Recognition/AComparison.lean b/SmallPresentation/UniversalGroup/Simulator/Recognition/AComparison.lean
+rename from UniversalGroup/Simulator/Recognition/AComparison.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Recognition/AComparison.lean
+--- a/UniversalGroup/Simulator/Recognition/AComparison.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Recognition/AComparison.lean
+@@ -1,8 +1,8 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Recognition.ACoefficients
+-public import UniversalGroup.Simulator.Recognition.CoefficientTransport
+-public import UniversalGroup.Foundations.HNN.ReducedWordPeel
++public import SmallPresentation.UniversalGroup.Simulator.Recognition.ACoefficients
++public import SmallPresentation.UniversalGroup.Simulator.Recognition.CoefficientTransport
++public import SmallPresentation.UniversalGroup.Foundations.HNN.ReducedWordPeel
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Recognition/AIntersection.lean b/SmallPresentation/UniversalGroup/Simulator/Recognition/AIntersection.lean
+rename from UniversalGroup/Simulator/Recognition/AIntersection.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Recognition/AIntersection.lean
+--- a/UniversalGroup/Simulator/Recognition/AIntersection.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Recognition/AIntersection.lean
+@@ -1,8 +1,8 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Recognition.AComparison
+-public import UniversalGroup.Simulator.Recognition.Prefixes
+-public import UniversalGroup.Simulator.Recognition.FactorNormalForms
++public import SmallPresentation.UniversalGroup.Simulator.Recognition.AComparison
++public import SmallPresentation.UniversalGroup.Simulator.Recognition.Prefixes
++public import SmallPresentation.UniversalGroup.Simulator.Recognition.FactorNormalForms
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Recognition/Algebra.lean b/SmallPresentation/UniversalGroup/Simulator/Recognition/Algebra.lean
+rename from UniversalGroup/Simulator/Recognition/Algebra.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Recognition/Algebra.lean
+--- a/UniversalGroup/Simulator/Recognition/Algebra.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Recognition/Algebra.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Host.EllAlgebra
++public import SmallPresentation.UniversalGroup.Host.EllAlgebra
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Recognition/BCoefficients.lean b/SmallPresentation/UniversalGroup/Simulator/Recognition/BCoefficients.lean
+rename from UniversalGroup/Simulator/Recognition/BCoefficients.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Recognition/BCoefficients.lean
+--- a/UniversalGroup/Simulator/Recognition/BCoefficients.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Recognition/BCoefficients.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Recognition.FiniteRank.Coefficients
++public import SmallPresentation.UniversalGroup.Simulator.Recognition.FiniteRank.Coefficients
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Recognition/BIntersection.lean b/SmallPresentation/UniversalGroup/Simulator/Recognition/BIntersection.lean
+rename from UniversalGroup/Simulator/Recognition/BIntersection.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Recognition/BIntersection.lean
+--- a/UniversalGroup/Simulator/Recognition/BIntersection.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Recognition/BIntersection.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Recognition.Prefixes
+-public import UniversalGroup.Simulator.Recognition.FactorNormalForms
++public import SmallPresentation.UniversalGroup.Simulator.Recognition.Prefixes
++public import SmallPresentation.UniversalGroup.Simulator.Recognition.FactorNormalForms
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Recognition/CoefficientTransport.lean b/SmallPresentation/UniversalGroup/Simulator/Recognition/CoefficientTransport.lean
+rename from UniversalGroup/Simulator/Recognition/CoefficientTransport.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Recognition/CoefficientTransport.lean
+--- a/UniversalGroup/Simulator/Recognition/CoefficientTransport.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Recognition/CoefficientTransport.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Recognition.BCoefficients
+-public import UniversalGroup.Simulator.Recognition.FiniteRank.NormalForms
++public import SmallPresentation.UniversalGroup.Simulator.Recognition.BCoefficients
++public import SmallPresentation.UniversalGroup.Simulator.Recognition.FiniteRank.NormalForms
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Recognition/Core.lean b/SmallPresentation/UniversalGroup/Simulator/Recognition/Core.lean
+rename from UniversalGroup/Simulator/Recognition/Core.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Recognition/Core.lean
+--- a/UniversalGroup/Simulator/Recognition/Core.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Recognition/Core.lean
+@@ -1,9 +1,9 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Core.ContextNormalForm
+-public import UniversalGroup.Simulator.Core.Lemma4Pinch
+-public import UniversalGroup.Simulator.Core.Mod5.Sparsity
+-public import UniversalGroup.Simulator.Core.PositiveWords
++public import SmallPresentation.UniversalGroup.Simulator.Core.ContextNormalForm
++public import SmallPresentation.UniversalGroup.Simulator.Core.Lemma4Pinch
++public import SmallPresentation.UniversalGroup.Simulator.Core.Mod5.Sparsity
++public import SmallPresentation.UniversalGroup.Simulator.Core.PositiveWords
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Recognition/FactorNormalForms.lean b/SmallPresentation/UniversalGroup/Simulator/Recognition/FactorNormalForms.lean
+rename from UniversalGroup/Simulator/Recognition/FactorNormalForms.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Recognition/FactorNormalForms.lean
+--- a/UniversalGroup/Simulator/Recognition/FactorNormalForms.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Recognition/FactorNormalForms.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Recognition.ACoefficients
+-public import UniversalGroup.Simulator.DModel
++public import SmallPresentation.UniversalGroup.Simulator.Recognition.ACoefficients
++public import SmallPresentation.UniversalGroup.Simulator.DModel
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Recognition/FiniteRank/Coefficients.lean b/SmallPresentation/UniversalGroup/Simulator/Recognition/FiniteRank/Coefficients.lean
+rename from UniversalGroup/Simulator/Recognition/FiniteRank/Coefficients.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Recognition/FiniteRank/Coefficients.lean
+--- a/UniversalGroup/Simulator/Recognition/FiniteRank/Coefficients.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Recognition/FiniteRank/Coefficients.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Recognition.Core
+-public import UniversalGroup.Simulator.Recognition.Forward
++public import SmallPresentation.UniversalGroup.Simulator.Recognition.Core
++public import SmallPresentation.UniversalGroup.Simulator.Recognition.Forward
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Recognition/FiniteRank/Intersection.lean b/SmallPresentation/UniversalGroup/Simulator/Recognition/FiniteRank/Intersection.lean
+rename from UniversalGroup/Simulator/Recognition/FiniteRank/Intersection.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Recognition/FiniteRank/Intersection.lean
+--- a/UniversalGroup/Simulator/Recognition/FiniteRank/Intersection.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Recognition/FiniteRank/Intersection.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Recognition.FiniteRank.NormalForms
+-public import UniversalGroup.Foundations.HNN.ReducedWordPeel
++public import SmallPresentation.UniversalGroup.Simulator.Recognition.FiniteRank.NormalForms
++public import SmallPresentation.UniversalGroup.Foundations.HNN.ReducedWordPeel
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Recognition/FiniteRank/NormalForms.lean b/SmallPresentation/UniversalGroup/Simulator/Recognition/FiniteRank/NormalForms.lean
+rename from UniversalGroup/Simulator/Recognition/FiniteRank/NormalForms.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Recognition/FiniteRank/NormalForms.lean
+--- a/UniversalGroup/Simulator/Recognition/FiniteRank/NormalForms.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Recognition/FiniteRank/NormalForms.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Recognition.FiniteRank.Coefficients
+-public import UniversalGroup.Simulator.DModel
++public import SmallPresentation.UniversalGroup.Simulator.Recognition.FiniteRank.Coefficients
++public import SmallPresentation.UniversalGroup.Simulator.DModel
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Recognition/Forward.lean b/SmallPresentation/UniversalGroup/Simulator/Recognition/Forward.lean
+rename from UniversalGroup/Simulator/Recognition/Forward.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Recognition/Forward.lean
+--- a/UniversalGroup/Simulator/Recognition/Forward.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Recognition/Forward.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Recognition.Algebra
++public import SmallPresentation.UniversalGroup.Simulator.Recognition.Algebra
+ 
+ @[expose] public section
+ 
+@@ -17,7 +17,8 @@
+ noncomputable section
+ set_option maxHeartbeats 800000
+ 
+-private theorem pow_mul_eq_mul_pow_of_mul_eq {G : Type*} [Group G]
++/-- Transport powers across a semiconjugating element. -/
++theorem pow_mul_eq_mul_pow_of_mul_eq {G : Type*} [Group G]
+     {a b c : G} (h : a * b = b * c) (n : ℕ) :
+     a ^ n * b = b * c ^ n := by
+   induction n with
+@@ -25,13 +26,15 @@
+   | succ n ih =>
+       rw [pow_succ', mul_assoc, ih, ← mul_assoc, h, mul_assoc, ← pow_succ']
+ 
+-private theorem evalPositive_append {G : Type*} [Group G]
++/-- Positive-word evaluation preserves concatenation. -/
++theorem evalPositive_append {G : Type*} [Group G]
+     (s₁ s₂ : G) (u v : List (Fin 2)) :
+     evalPositive s₁ s₂ (u ++ v) =
+       evalPositive s₁ s₂ u * evalPositive s₁ s₂ v := by
+   simp [evalPositive]
+ 
+-private theorem evalPositive_commute {G : Type*} [Group G]
++/-- An element commuting with both generators commutes with every positive word. -/
++theorem evalPositive_commute {G : Type*} [Group G]
+     (s₁ s₂ c : G) (h₁ : Commute s₁ c) (h₂ : Commute s₂ c)
+     (w : List (Fin 2)) :
+     Commute (evalPositive s₁ s₂ w) c := by
+@@ -44,7 +47,8 @@
+       · by_cases ha : a = 0 <;> simp [ha, h₁, h₂]
+       · exact ih
+ 
+-private theorem d_transport {G : Type*} [Group G]
++/-- Transport a power across a positive word under the fourth-power relation. -/
++theorem d_transport {G : Type*} [Group G]
+     (d s₁ s₂ : G)
+     (hd : ∀ s ∈ ({s₁, s₂} : Set G), d ^ 4 * s = s * d)
+     (u : List (Fin 2)) (i : ℕ) :
+@@ -84,7 +88,8 @@
+         _ = evalPositive s₁ s₂ (a :: u) * d ^ i := by
+           simp only [evalPositive, List.map_cons, List.prod_cons, mul_assoc]
+ 
+-private theorem e_transport {G : Type*} [Group G]
++/-- Transport a power in the reverse direction under the fourth-power relation. -/
++theorem e_transport {G : Type*} [Group G]
+     (e s₁ s₂ : G)
+     (he : ∀ s ∈ ({s₁, s₂} : Set G), e * s = s * e ^ 4)
+     (u : List (Fin 2)) (i : ℕ) :
+@@ -120,7 +125,8 @@
+           rw [hexp]
+           simp only [evalPositive, List.map_cons, List.prod_cons, mul_assoc]
+ 
+-private theorem pack_context {G : Type*} [Group G]
++/-- Move coefficient powers through the two sides of a word context. -/
++theorem pack_context {G : Type*} [Group G]
+     (dI dn en L X R eJ : G) (hd : dI * L = L * dn)
+     (he : en * R = R * eJ) :
+     dI * (L * X * R) * eJ = L * (dn * X * en) * R := by
+@@ -130,7 +136,8 @@
+     _ = (L * dn) * X * (en * R) := by rw [hd, ← he]
+     _ = L * (dn * X * en) * R := by simp only [mul_assoc]
+ 
+-private theorem conjugate_context {G : Type*} [Group G]
++/-- Conjugate a middle factor while preserving commuting outer factors. -/
++theorem conjugate_context {G : Type*} [Group G]
+     (c L X Y R : G) (hL : Commute L c) (hR : Commute R c)
+     (hXY : c⁻¹ * X * c = Y) :
+     c⁻¹ * (L * X * R) * c = L * Y * R := by
+diff --git a/UniversalGroup/Simulator/Recognition/Prefixes.lean b/SmallPresentation/UniversalGroup/Simulator/Recognition/Prefixes.lean
+rename from UniversalGroup/Simulator/Recognition/Prefixes.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Recognition/Prefixes.lean
+--- a/UniversalGroup/Simulator/Recognition/Prefixes.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Recognition/Prefixes.lean
+@@ -1,8 +1,8 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Recognition.CoefficientTransport
+-public import UniversalGroup.Simulator.Codes.Cancellation
+-public import UniversalGroup.Foundations.HNN.ReducedWordPeel
++public import SmallPresentation.UniversalGroup.Simulator.Recognition.CoefficientTransport
++public import SmallPresentation.UniversalGroup.Simulator.Codes.Cancellation
++public import SmallPresentation.UniversalGroup.Foundations.HNN.ReducedWordPeel
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Relations.lean b/SmallPresentation/UniversalGroup/Simulator/Relations.lean
+rename from UniversalGroup/Simulator/Relations.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Relations.lean
+--- a/UniversalGroup/Simulator/Relations.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Relations.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Data
+-public import UniversalGroup.Simulator.Core.SupportedRules
++public import SmallPresentation.UniversalGroup.Simulator.Data
++public import SmallPresentation.UniversalGroup.Simulator.Core.SupportedRules
+ public import Mathlib.Algebra.Group.Commute.Basic
+ 
+ @[expose] public section
+diff --git a/UniversalGroup/Simulator/Subgroups.lean b/SmallPresentation/UniversalGroup/Simulator/Subgroups.lean
+rename from UniversalGroup/Simulator/Subgroups.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Subgroups.lean
+--- a/UniversalGroup/Simulator/Subgroups.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Subgroups.lean
+@@ -1,8 +1,8 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Model
+-public import UniversalGroup.Simulator.Centralizer
+-public import UniversalGroup.Simulator.Core.FreeSubgroups
++public import SmallPresentation.UniversalGroup.Simulator.Model
++public import SmallPresentation.UniversalGroup.Simulator.Centralizer
++public import SmallPresentation.UniversalGroup.Simulator.Core.FreeSubgroups
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Symmetry/CodeIntersections.lean b/SmallPresentation/UniversalGroup/Simulator/Symmetry/CodeIntersections.lean
+rename from UniversalGroup/Simulator/Symmetry/CodeIntersections.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Symmetry/CodeIntersections.lean
+--- a/UniversalGroup/Simulator/Symmetry/CodeIntersections.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Symmetry/CodeIntersections.lean
+@@ -1,8 +1,8 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Symmetry.Intersections
+-public import UniversalGroup.Simulator.Codes.RightIntersection
+-public import UniversalGroup.Host.EllStage
++public import SmallPresentation.UniversalGroup.Simulator.Symmetry.Intersections
++public import SmallPresentation.UniversalGroup.Simulator.Codes.RightIntersection
++public import SmallPresentation.UniversalGroup.Host.EllStage
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Symmetry/Equivalence.lean b/SmallPresentation/UniversalGroup/Simulator/Symmetry/Equivalence.lean
+rename from UniversalGroup/Simulator/Symmetry/Equivalence.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Symmetry/Equivalence.lean
+--- a/UniversalGroup/Simulator/Symmetry/Equivalence.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Symmetry/Equivalence.lean
+@@ -1,8 +1,8 @@
+ module
+ 
+-public import UniversalGroup.Simulator.FreeLetters
+-public import UniversalGroup.Simulator.Core.Symmetry
+-public import UniversalGroup.Foundations.HNN.CentralizerMap
++public import SmallPresentation.UniversalGroup.Simulator.FreeLetters
++public import SmallPresentation.UniversalGroup.Simulator.Core.Symmetry
++public import SmallPresentation.UniversalGroup.Foundations.HNN.CentralizerMap
+ 
+ @[expose] public section
+ 
+diff --git a/UniversalGroup/Simulator/Symmetry/Intersections.lean b/SmallPresentation/UniversalGroup/Simulator/Symmetry/Intersections.lean
+rename from UniversalGroup/Simulator/Symmetry/Intersections.lean
+rename to SmallPresentation/UniversalGroup/Simulator/Symmetry/Intersections.lean
+--- a/UniversalGroup/Simulator/Symmetry/Intersections.lean
++++ b/SmallPresentation/UniversalGroup/Simulator/Symmetry/Intersections.lean
+@@ -1,6 +1,6 @@
+ module
+ 
+-public import UniversalGroup.Simulator.Symmetry.Equivalence
++public import SmallPresentation.UniversalGroup.Simulator.Symmetry.Equivalence
+ 
+ @[expose] public section
+ 
