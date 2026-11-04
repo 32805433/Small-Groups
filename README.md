@@ -1,4 +1,4 @@
-# SmallGroups
+# Small Groups
 
 Lean 4 proofs of groups with small finite presentations and universality or undecidability properties.
 
