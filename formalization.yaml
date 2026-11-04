@@ -8,9 +8,7 @@ project:
     four-relator family with undecidable triviality and universal nontrivial members; a torsion-free
     two-generator, four-relator group with undecidable word problem, infinite cyclic abelianization,
     and a displayed normal generator; and an effective two-generator, five-relator family with undecidable
-    triviality whose members are all torsion-free. Counts refer to displayed generator and relator
-    slots, with redundancy allowed; no minimality is claimed. The universal and torsion-free groups
-    are separate witnesses.'
+    triviality whose members are all torsion-free.'
   authors:
   - Qiuyu Ren
   responsible_maintainers:
